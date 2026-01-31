@@ -678,6 +678,11 @@ void Profile_SaveSettings( char* pszName, player_profile_t* pProfile )
 
 volatile int					sys_checksum;
 
+DLL_EXPORT void StoreProfile()
+{
+	Con_DPrintf("This is supposed to be profile storage, but I'm lazy lol, I will implement later\n");
+}
+
 
 /*
 ================

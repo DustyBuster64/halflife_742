@@ -2061,6 +2061,45 @@ DLL_EXPORT int Host_Frame( float time, int iState, int* stateInfo )
 	return giActive;
 }
 
+void CheckGore()
+{
+	char szBuffer[128];
+	char szSubKey[128];
+	qboolean bReducedGore = false; 
+
+	memset(szBuffer, 0, sizeof(szBuffer));
+	sprintf(szSubKey, "Software\\Valve\\Half-Life\\Settings");
+
+	Master_SetRegKeyValue(szSubKey, "User Token 2", szBuffer, sizeof(szBuffer) - 1, szBuffer);
+
+	if(strlen(szBuffer) > 0)
+	{
+		bReducedGore = true;
+	} 
+	else
+	{
+		Master_SetRegKeyValue(szSubKey, "User Token 3", szBuffer, sizeof(szBuffer) - 1, szBuffer);
+
+		if(strlen(szBuffer) > 0)
+			bReducedGore = true;
+	}
+
+	if(bReducedGore)
+	{
+		Cvar_SetValue("violence_hblood", 0.0f);
+		Cvar_SetValue("violence_hgibs", 0.0f);
+		Cvar_SetValue("violence_ablood", 0.0f);
+		Cvar_SetValue("violence_agibs", 0.0f);
+	}
+	else
+	{
+		Cvar_SetValue("violence_hblood", 1.0f);
+		Cvar_SetValue("violence_hgibs", 1.0f);
+		Cvar_SetValue("violence_ablood", 1.0f);
+		Cvar_SetValue("violence_agibs", 1.0f);
+	}
+}
+
 /*
 ====================
 Host_Init
@@ -2189,6 +2228,8 @@ int Host_Init( quakeparms_t* parms )
 		Cvar_SetValue("sv_cheats", 1.0);
 		Cvar_SetValue("developer", 1.0);
 	}
+
+	CheckGore();
 
 	return 1;
 }

@@ -78,7 +78,7 @@ typedef struct
 	char		identifier[MAX_QPATH];
 } gltexture_t;
 
-#define	MAX_GLTEXTURES	1500
+#define	MAX_GLTEXTURES	1700
 gltexture_t gltextures[MAX_GLTEXTURES];
 int			numgltextures;
 

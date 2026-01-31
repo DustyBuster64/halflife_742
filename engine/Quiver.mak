@@ -37,8 +37,8 @@ NULL=nul
 ################################################################################
 # Begin Project
 # PROP Target_Last_Scanned "Quiver - Win32 Debug"
-RSC=rc.exe
 MTL=mktyplib.exe
+RSC=rc.exe
 CPP=cl.exe
 
 !IF  "$(CFG)" == "Quiver - Win32 Release"
@@ -598,106 +598,181 @@ LINK32_OBJS= \
 OUTDIR=.\GLDebug
 INTDIR=.\GLDebug
 
-ALL : "$(OUTDIR)\hw.dll"
+ALL : "$(OUTDIR)\hw.dll" "$(OUTDIR)\Quiver.bsc"
 
 CLEAN : 
 	-@erase "$(INTDIR)\a3dwrapper.obj"
+	-@erase "$(INTDIR)\a3dwrapper.sbr"
 	-@erase "$(INTDIR)\buildnum.obj"
+	-@erase "$(INTDIR)\buildnum.sbr"
 	-@erase "$(INTDIR)\cdll_exp.obj"
+	-@erase "$(INTDIR)\cdll_exp.sbr"
 	-@erase "$(INTDIR)\cdll_int.obj"
+	-@erase "$(INTDIR)\cdll_int.sbr"
 	-@erase "$(INTDIR)\chase.obj"
+	-@erase "$(INTDIR)\chase.sbr"
 	-@erase "$(INTDIR)\cl_cam.obj"
+	-@erase "$(INTDIR)\cl_cam.sbr"
 	-@erase "$(INTDIR)\CL_DEMO.OBJ"
+	-@erase "$(INTDIR)\CL_DEMO.SBR"
 	-@erase "$(INTDIR)\cl_draw.obj"
+	-@erase "$(INTDIR)\cl_draw.sbr"
 	-@erase "$(INTDIR)\cl_ents.obj"
+	-@erase "$(INTDIR)\cl_ents.sbr"
 	-@erase "$(INTDIR)\cl_input.obj"
+	-@erase "$(INTDIR)\cl_input.sbr"
 	-@erase "$(INTDIR)\CL_MAIN.OBJ"
+	-@erase "$(INTDIR)\CL_MAIN.SBR"
 	-@erase "$(INTDIR)\CL_PARSE.OBJ"
+	-@erase "$(INTDIR)\CL_PARSE.SBR"
 	-@erase "$(INTDIR)\cl_pred.obj"
+	-@erase "$(INTDIR)\cl_pred.sbr"
 	-@erase "$(INTDIR)\CL_TENT.OBJ"
+	-@erase "$(INTDIR)\CL_TENT.SBR"
 	-@erase "$(INTDIR)\cmd.obj"
+	-@erase "$(INTDIR)\cmd.sbr"
 	-@erase "$(INTDIR)\cmodel.obj"
+	-@erase "$(INTDIR)\cmodel.sbr"
 	-@erase "$(INTDIR)\common.obj"
+	-@erase "$(INTDIR)\common.sbr"
 	-@erase "$(INTDIR)\conproc.obj"
+	-@erase "$(INTDIR)\conproc.sbr"
 	-@erase "$(INTDIR)\CONSOLE.OBJ"
+	-@erase "$(INTDIR)\CONSOLE.SBR"
 	-@erase "$(INTDIR)\crc.obj"
+	-@erase "$(INTDIR)\crc.sbr"
 	-@erase "$(INTDIR)\cvar.obj"
+	-@erase "$(INTDIR)\cvar.sbr"
 	-@erase "$(INTDIR)\GL_DRAW.OBJ"
+	-@erase "$(INTDIR)\GL_DRAW.SBR"
 	-@erase "$(INTDIR)\GL_MESH.OBJ"
+	-@erase "$(INTDIR)\GL_MESH.SBR"
 	-@erase "$(INTDIR)\GL_MODEL.OBJ"
+	-@erase "$(INTDIR)\GL_MODEL.SBR"
 	-@erase "$(INTDIR)\gl_refrag.obj"
+	-@erase "$(INTDIR)\gl_refrag.sbr"
 	-@erase "$(INTDIR)\gl_rlight.obj"
+	-@erase "$(INTDIR)\gl_rlight.sbr"
 	-@erase "$(INTDIR)\GL_RMAIN.OBJ"
+	-@erase "$(INTDIR)\GL_RMAIN.SBR"
 	-@erase "$(INTDIR)\GL_RMISC.OBJ"
+	-@erase "$(INTDIR)\GL_RMISC.SBR"
 	-@erase "$(INTDIR)\GL_RSURF.OBJ"
+	-@erase "$(INTDIR)\GL_RSURF.SBR"
 	-@erase "$(INTDIR)\gl_screen.obj"
+	-@erase "$(INTDIR)\gl_screen.sbr"
 	-@erase "$(INTDIR)\GL_VIDNT.OBJ"
+	-@erase "$(INTDIR)\GL_VIDNT.SBR"
 	-@erase "$(INTDIR)\GL_WARP.OBJ"
+	-@erase "$(INTDIR)\GL_WARP.SBR"
 	-@erase "$(INTDIR)\glHud.obj"
+	-@erase "$(INTDIR)\glHud.sbr"
 	-@erase "$(INTDIR)\glide.obj"
+	-@erase "$(INTDIR)\glide.sbr"
 	-@erase "$(INTDIR)\ha3d.obj"
+	-@erase "$(INTDIR)\ha3d.sbr"
 	-@erase "$(INTDIR)\ha3dg.obj"
+	-@erase "$(INTDIR)\ha3dg.sbr"
 	-@erase "$(INTDIR)\hashpak.obj"
+	-@erase "$(INTDIR)\hashpak.sbr"
 	-@erase "$(INTDIR)\host.obj"
+	-@erase "$(INTDIR)\host.sbr"
 	-@erase "$(INTDIR)\host_cmd.obj"
+	-@erase "$(INTDIR)\host_cmd.sbr"
 	-@erase "$(INTDIR)\HUD.obj"
+	-@erase "$(INTDIR)\HUD.sbr"
 	-@erase "$(INTDIR)\in_win.obj"
+	-@erase "$(INTDIR)\in_win.sbr"
 	-@erase "$(INTDIR)\KEYS.OBJ"
+	-@erase "$(INTDIR)\KEYS.SBR"
 	-@erase "$(INTDIR)\l_studio.obj"
+	-@erase "$(INTDIR)\l_studio.sbr"
 	-@erase "$(INTDIR)\math.obj"
 	-@erase "$(INTDIR)\mathlib.obj"
+	-@erase "$(INTDIR)\mathlib.sbr"
 	-@erase "$(INTDIR)\net_chan.obj"
+	-@erase "$(INTDIR)\net_chan.sbr"
 	-@erase "$(INTDIR)\net_ws.obj"
+	-@erase "$(INTDIR)\net_ws.sbr"
 	-@erase "$(INTDIR)\opengl32.obj"
+	-@erase "$(INTDIR)\opengl32.sbr"
 	-@erase "$(INTDIR)\pe_win32.obj"
+	-@erase "$(INTDIR)\pe_win32.sbr"
 	-@erase "$(INTDIR)\physics.obj"
+	-@erase "$(INTDIR)\physics.sbr"
 	-@erase "$(INTDIR)\pmove.obj"
+	-@erase "$(INTDIR)\pmove.sbr"
 	-@erase "$(INTDIR)\pmovetst.obj"
+	-@erase "$(INTDIR)\pmovetst.sbr"
 	-@erase "$(INTDIR)\pr_cmds.obj"
+	-@erase "$(INTDIR)\pr_cmds.sbr"
 	-@erase "$(INTDIR)\pr_edict.obj"
+	-@erase "$(INTDIR)\pr_edict.sbr"
 	-@erase "$(INTDIR)\qgl.obj"
+	-@erase "$(INTDIR)\qgl.sbr"
 	-@erase "$(INTDIR)\R_PART.OBJ"
+	-@erase "$(INTDIR)\R_PART.SBR"
 	-@erase "$(INTDIR)\r_studio.obj"
+	-@erase "$(INTDIR)\r_studio.sbr"
 	-@erase "$(INTDIR)\r_trans.obj"
+	-@erase "$(INTDIR)\r_trans.sbr"
 	-@erase "$(INTDIR)\r_triangle.obj"
+	-@erase "$(INTDIR)\r_triangle.sbr"
 	-@erase "$(INTDIR)\SND_DMA.OBJ"
+	-@erase "$(INTDIR)\SND_DMA.SBR"
 	-@erase "$(INTDIR)\SND_MEM.OBJ"
+	-@erase "$(INTDIR)\SND_MEM.SBR"
 	-@erase "$(INTDIR)\SND_MIX.OBJ"
+	-@erase "$(INTDIR)\SND_MIX.SBR"
 	-@erase "$(INTDIR)\snd_mixa.obj"
 	-@erase "$(INTDIR)\SND_WIN.OBJ"
+	-@erase "$(INTDIR)\SND_WIN.SBR"
 	-@erase "$(INTDIR)\SV_MAIN.OBJ"
+	-@erase "$(INTDIR)\SV_MAIN.SBR"
 	-@erase "$(INTDIR)\sv_move.obj"
+	-@erase "$(INTDIR)\sv_move.sbr"
 	-@erase "$(INTDIR)\sv_phys.obj"
+	-@erase "$(INTDIR)\sv_phys.sbr"
 	-@erase "$(INTDIR)\sv_upld.obj"
+	-@erase "$(INTDIR)\sv_upld.sbr"
 	-@erase "$(INTDIR)\sv_user.obj"
+	-@erase "$(INTDIR)\sv_user.sbr"
 	-@erase "$(INTDIR)\sys_win.obj"
+	-@erase "$(INTDIR)\sys_win.sbr"
 	-@erase "$(INTDIR)\sys_wina.obj"
 	-@erase "$(INTDIR)\textures.obj"
+	-@erase "$(INTDIR)\textures.sbr"
 	-@erase "$(INTDIR)\tmessage.obj"
+	-@erase "$(INTDIR)\tmessage.sbr"
 	-@erase "$(INTDIR)\vc40.idb"
 	-@erase "$(INTDIR)\vc40.pdb"
 	-@erase "$(INTDIR)\VIEW.OBJ"
+	-@erase "$(INTDIR)\VIEW.SBR"
 	-@erase "$(INTDIR)\wad.obj"
+	-@erase "$(INTDIR)\wad.sbr"
 	-@erase "$(INTDIR)\world.obj"
+	-@erase "$(INTDIR)\world.sbr"
 	-@erase "$(INTDIR)\worlda.obj"
 	-@erase "$(INTDIR)\zone.obj"
+	-@erase "$(INTDIR)\zone.sbr"
 	-@erase "$(OUTDIR)\hw.dll"
 	-@erase "$(OUTDIR)\hw.exp"
 	-@erase "$(OUTDIR)\hw.ilk"
 	-@erase "$(OUTDIR)\hw.lib"
 	-@erase "$(OUTDIR)\hw.pdb"
+	-@erase "$(OUTDIR)\Quiver.bsc"
 
 "$(OUTDIR)" :
     if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
 
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS" /YX /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS" /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS" /FR /c
 # SUBTRACT CPP /YX
 CPP_PROJ=/nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
  /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
- /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c 
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c 
 CPP_OBJS=.\GLDebug/
-CPP_SBRS=.\.
+CPP_SBRS=.\GLDebug/
 # ADD BASE MTL /nologo /D "_DEBUG" /win32
 # ADD MTL /nologo /D "_DEBUG" /win32
 MTL_PROJ=/nologo /D "_DEBUG" /win32 
@@ -708,7 +783,86 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 BSC32_FLAGS=/nologo /o"$(OUTDIR)/Quiver.bsc" 
 BSC32_SBRS= \
-	
+	"$(INTDIR)\a3dwrapper.sbr" \
+	"$(INTDIR)\buildnum.sbr" \
+	"$(INTDIR)\cdll_exp.sbr" \
+	"$(INTDIR)\cdll_int.sbr" \
+	"$(INTDIR)\chase.sbr" \
+	"$(INTDIR)\cl_cam.sbr" \
+	"$(INTDIR)\CL_DEMO.SBR" \
+	"$(INTDIR)\cl_draw.sbr" \
+	"$(INTDIR)\cl_ents.sbr" \
+	"$(INTDIR)\cl_input.sbr" \
+	"$(INTDIR)\CL_MAIN.SBR" \
+	"$(INTDIR)\CL_PARSE.SBR" \
+	"$(INTDIR)\cl_pred.sbr" \
+	"$(INTDIR)\CL_TENT.SBR" \
+	"$(INTDIR)\cmd.sbr" \
+	"$(INTDIR)\cmodel.sbr" \
+	"$(INTDIR)\common.sbr" \
+	"$(INTDIR)\conproc.sbr" \
+	"$(INTDIR)\CONSOLE.SBR" \
+	"$(INTDIR)\crc.sbr" \
+	"$(INTDIR)\cvar.sbr" \
+	"$(INTDIR)\GL_DRAW.SBR" \
+	"$(INTDIR)\GL_MESH.SBR" \
+	"$(INTDIR)\GL_MODEL.SBR" \
+	"$(INTDIR)\gl_refrag.sbr" \
+	"$(INTDIR)\gl_rlight.sbr" \
+	"$(INTDIR)\GL_RMAIN.SBR" \
+	"$(INTDIR)\GL_RMISC.SBR" \
+	"$(INTDIR)\GL_RSURF.SBR" \
+	"$(INTDIR)\gl_screen.sbr" \
+	"$(INTDIR)\GL_VIDNT.SBR" \
+	"$(INTDIR)\GL_WARP.SBR" \
+	"$(INTDIR)\glHud.sbr" \
+	"$(INTDIR)\glide.sbr" \
+	"$(INTDIR)\ha3d.sbr" \
+	"$(INTDIR)\ha3dg.sbr" \
+	"$(INTDIR)\hashpak.sbr" \
+	"$(INTDIR)\host.sbr" \
+	"$(INTDIR)\host_cmd.sbr" \
+	"$(INTDIR)\HUD.sbr" \
+	"$(INTDIR)\in_win.sbr" \
+	"$(INTDIR)\KEYS.SBR" \
+	"$(INTDIR)\l_studio.sbr" \
+	"$(INTDIR)\mathlib.sbr" \
+	"$(INTDIR)\net_chan.sbr" \
+	"$(INTDIR)\net_ws.sbr" \
+	"$(INTDIR)\opengl32.sbr" \
+	"$(INTDIR)\pe_win32.sbr" \
+	"$(INTDIR)\physics.sbr" \
+	"$(INTDIR)\pmove.sbr" \
+	"$(INTDIR)\pmovetst.sbr" \
+	"$(INTDIR)\pr_cmds.sbr" \
+	"$(INTDIR)\pr_edict.sbr" \
+	"$(INTDIR)\qgl.sbr" \
+	"$(INTDIR)\R_PART.SBR" \
+	"$(INTDIR)\r_studio.sbr" \
+	"$(INTDIR)\r_trans.sbr" \
+	"$(INTDIR)\r_triangle.sbr" \
+	"$(INTDIR)\SND_DMA.SBR" \
+	"$(INTDIR)\SND_MEM.SBR" \
+	"$(INTDIR)\SND_MIX.SBR" \
+	"$(INTDIR)\SND_WIN.SBR" \
+	"$(INTDIR)\SV_MAIN.SBR" \
+	"$(INTDIR)\sv_move.sbr" \
+	"$(INTDIR)\sv_phys.sbr" \
+	"$(INTDIR)\sv_upld.sbr" \
+	"$(INTDIR)\sv_user.sbr" \
+	"$(INTDIR)\sys_win.sbr" \
+	"$(INTDIR)\textures.sbr" \
+	"$(INTDIR)\tmessage.sbr" \
+	"$(INTDIR)\VIEW.SBR" \
+	"$(INTDIR)\wad.sbr" \
+	"$(INTDIR)\world.sbr" \
+	"$(INTDIR)\zone.sbr"
+
+"$(OUTDIR)\Quiver.bsc" : "$(OUTDIR)" $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib ws2_32.lib /nologo /subsystem:windows /dll /debug /machine:I386 /out:"GLDebug/hw.dll"
 # ADD LINK32 ddraw.lib dxguid.lib ../dx6sdk/lib/dxmgr.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib ws2_32.lib /nologo /subsystem:windows /dll /debug /machine:I386 /nodefaultlib:"MSVCRT" /out:"GLDebug/hw.dll" /libpath:"..\dx6sdk\lib"
@@ -1240,6 +1394,8 @@ NODEP_CPP_BUILD=\
 
 "$(INTDIR)\buildnum.obj" : $(SOURCE) $(DEP_CPP_BUILD) "$(INTDIR)"
 
+"$(INTDIR)\buildnum.sbr" : $(SOURCE) $(DEP_CPP_BUILD) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -1334,6 +1490,8 @@ NODEP_CPP_CDLL_=\
 
 
 "$(INTDIR)\cdll_exp.obj" : $(SOURCE) $(DEP_CPP_CDLL_) "$(INTDIR)"
+
+"$(INTDIR)\cdll_exp.sbr" : $(SOURCE) $(DEP_CPP_CDLL_) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -1434,6 +1592,8 @@ NODEP_CPP_CDLL_I=\
 
 
 "$(INTDIR)\cdll_int.obj" : $(SOURCE) $(DEP_CPP_CDLL_I) "$(INTDIR)"
+
+"$(INTDIR)\cdll_int.sbr" : $(SOURCE) $(DEP_CPP_CDLL_I) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -1546,6 +1706,8 @@ NODEP_CPP_CHASE=\
 
 "$(INTDIR)\chase.obj" : $(SOURCE) $(DEP_CPP_CHASE) "$(INTDIR)"
 
+"$(INTDIR)\chase.sbr" : $(SOURCE) $(DEP_CPP_CHASE) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -1642,6 +1804,8 @@ NODEP_CPP_CL_CA=\
 
 
 "$(INTDIR)\cl_cam.obj" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
+
+"$(INTDIR)\cl_cam.sbr" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -1740,6 +1904,8 @@ NODEP_CPP_CL_DE=\
 
 
 "$(INTDIR)\CL_DEMO.OBJ" : $(SOURCE) $(DEP_CPP_CL_DE) "$(INTDIR)"
+
+"$(INTDIR)\CL_DEMO.SBR" : $(SOURCE) $(DEP_CPP_CL_DE) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -1852,6 +2018,8 @@ NODEP_CPP_CL_DR=\
 
 
 "$(INTDIR)\cl_draw.obj" : $(SOURCE) $(DEP_CPP_CL_DR) "$(INTDIR)"
+
+"$(INTDIR)\cl_draw.sbr" : $(SOURCE) $(DEP_CPP_CL_DR) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -1969,6 +2137,8 @@ NODEP_CPP_CL_EN=\
 
 "$(INTDIR)\cl_ents.obj" : $(SOURCE) $(DEP_CPP_CL_EN) "$(INTDIR)"
 
+"$(INTDIR)\cl_ents.sbr" : $(SOURCE) $(DEP_CPP_CL_EN) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -2064,6 +2234,8 @@ NODEP_CPP_CL_IN=\
 
 
 "$(INTDIR)\cl_input.obj" : $(SOURCE) $(DEP_CPP_CL_IN) "$(INTDIR)"
+
+"$(INTDIR)\cl_input.sbr" : $(SOURCE) $(DEP_CPP_CL_IN) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -2169,6 +2341,8 @@ NODEP_CPP_CL_MA=\
 
 "$(INTDIR)\CL_MAIN.OBJ" : $(SOURCE) $(DEP_CPP_CL_MA) "$(INTDIR)"
 
+"$(INTDIR)\CL_MAIN.SBR" : $(SOURCE) $(DEP_CPP_CL_MA) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -2270,6 +2444,8 @@ NODEP_CPP_CL_PA=\
 
 "$(INTDIR)\CL_PARSE.OBJ" : $(SOURCE) $(DEP_CPP_CL_PA) "$(INTDIR)"
 
+"$(INTDIR)\CL_PARSE.SBR" : $(SOURCE) $(DEP_CPP_CL_PA) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -2366,6 +2542,8 @@ NODEP_CPP_CL_PR=\
 
 
 "$(INTDIR)\cl_pred.obj" : $(SOURCE) $(DEP_CPP_CL_PR) "$(INTDIR)"
+
+"$(INTDIR)\cl_pred.sbr" : $(SOURCE) $(DEP_CPP_CL_PR) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -2483,6 +2661,8 @@ NODEP_CPP_CL_TE=\
 
 
 "$(INTDIR)\CL_TENT.OBJ" : $(SOURCE) $(DEP_CPP_CL_TE) "$(INTDIR)"
+
+"$(INTDIR)\CL_TENT.SBR" : $(SOURCE) $(DEP_CPP_CL_TE) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -2613,6 +2793,8 @@ NODEP_CPP_CMD_C=\
 
 "$(INTDIR)\cmd.obj" : $(SOURCE) $(DEP_CPP_CMD_C) "$(INTDIR)"
 
+"$(INTDIR)\cmd.sbr" : $(SOURCE) $(DEP_CPP_CMD_C) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -2724,6 +2906,8 @@ NODEP_CPP_CMODE=\
 
 
 "$(INTDIR)\cmodel.obj" : $(SOURCE) $(DEP_CPP_CMODE) "$(INTDIR)"
+
+"$(INTDIR)\cmodel.sbr" : $(SOURCE) $(DEP_CPP_CMODE) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -2855,6 +3039,8 @@ NODEP_CPP_COMMO=\
 
 "$(INTDIR)\common.obj" : $(SOURCE) $(DEP_CPP_COMMO) "$(INTDIR)"
 
+"$(INTDIR)\common.sbr" : $(SOURCE) $(DEP_CPP_COMMO) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -2967,6 +3153,8 @@ NODEP_CPP_CONPR=\
 
 "$(INTDIR)\conproc.obj" : $(SOURCE) $(DEP_CPP_CONPR) "$(INTDIR)"
 
+"$(INTDIR)\conproc.sbr" : $(SOURCE) $(DEP_CPP_CONPR) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -3078,6 +3266,8 @@ NODEP_CPP_CONSO=\
 
 
 "$(INTDIR)\CONSOLE.OBJ" : $(SOURCE) $(DEP_CPP_CONSO) "$(INTDIR)"
+
+"$(INTDIR)\CONSOLE.SBR" : $(SOURCE) $(DEP_CPP_CONSO) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -3205,6 +3395,8 @@ NODEP_CPP_CRC_C=\
 
 
 "$(INTDIR)\crc.obj" : $(SOURCE) $(DEP_CPP_CRC_C) "$(INTDIR)"
+
+"$(INTDIR)\crc.sbr" : $(SOURCE) $(DEP_CPP_CRC_C) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -3365,6 +3557,8 @@ NODEP_CPP_CVAR_=\
 
 
 "$(INTDIR)\cvar.obj" : $(SOURCE) $(DEP_CPP_CVAR_) "$(INTDIR)"
+
+"$(INTDIR)\cvar.sbr" : $(SOURCE) $(DEP_CPP_CVAR_) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -4761,11 +4955,17 @@ NODEP_CPP_GL_DR=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_DRAW.OBJ" : $(SOURCE) $(DEP_CPP_GL_DR) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_DRAW.OBJ" : $(SOURCE) $(DEP_CPP_GL_DR) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_DRAW.SBR" : $(SOURCE) $(DEP_CPP_GL_DR) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -4878,11 +5078,17 @@ NODEP_CPP_GL_ME=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_MESH.OBJ" : $(SOURCE) $(DEP_CPP_GL_ME) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_MESH.OBJ" : $(SOURCE) $(DEP_CPP_GL_ME) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_MESH.SBR" : $(SOURCE) $(DEP_CPP_GL_ME) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -4978,11 +5184,17 @@ NODEP_CPP_GL_MO=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_MODEL.OBJ" : $(SOURCE) $(DEP_CPP_GL_MO) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_MODEL.OBJ" : $(SOURCE) $(DEP_CPP_GL_MO) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_MODEL.SBR" : $(SOURCE) $(DEP_CPP_GL_MO) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5095,11 +5307,17 @@ NODEP_CPP_GL_RE=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\gl_refrag.obj" : $(SOURCE) $(DEP_CPP_GL_RE) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\gl_refrag.obj" : $(SOURCE) $(DEP_CPP_GL_RE) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\gl_refrag.sbr" : $(SOURCE) $(DEP_CPP_GL_RE) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5192,11 +5410,17 @@ NODEP_CPP_GL_RL=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\gl_rlight.obj" : $(SOURCE) $(DEP_CPP_GL_RL) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\gl_rlight.obj" : $(SOURCE) $(DEP_CPP_GL_RL) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\gl_rlight.sbr" : $(SOURCE) $(DEP_CPP_GL_RL) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5294,11 +5518,17 @@ NODEP_CPP_GL_RM=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_RMAIN.OBJ" : $(SOURCE) $(DEP_CPP_GL_RM) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_RMAIN.OBJ" : $(SOURCE) $(DEP_CPP_GL_RM) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_RMAIN.SBR" : $(SOURCE) $(DEP_CPP_GL_RM) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5391,11 +5621,17 @@ NODEP_CPP_GL_RMI=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_RMISC.OBJ" : $(SOURCE) $(DEP_CPP_GL_RMI) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_RMISC.OBJ" : $(SOURCE) $(DEP_CPP_GL_RMI) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_RMISC.SBR" : $(SOURCE) $(DEP_CPP_GL_RMI) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5492,11 +5728,17 @@ NODEP_CPP_GL_RS=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_RSURF.OBJ" : $(SOURCE) $(DEP_CPP_GL_RS) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_RSURF.OBJ" : $(SOURCE) $(DEP_CPP_GL_RS) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_RSURF.SBR" : $(SOURCE) $(DEP_CPP_GL_RS) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5589,11 +5831,17 @@ NODEP_CPP_GL_SC=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\gl_screen.obj" : $(SOURCE) $(DEP_CPP_GL_SC) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\gl_screen.obj" : $(SOURCE) $(DEP_CPP_GL_SC) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\gl_screen.sbr" : $(SOURCE) $(DEP_CPP_GL_SC) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5688,11 +5936,17 @@ NODEP_CPP_GL_VI=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_VIDNT.OBJ" : $(SOURCE) $(DEP_CPP_GL_VI) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_VIDNT.OBJ" : $(SOURCE) $(DEP_CPP_GL_VI) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_VIDNT.SBR" : $(SOURCE) $(DEP_CPP_GL_VI) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5788,11 +6042,17 @@ NODEP_CPP_GL_WA=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\GL_WARP.OBJ" : $(SOURCE) $(DEP_CPP_GL_WA) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\GL_WARP.OBJ" : $(SOURCE) $(DEP_CPP_GL_WA) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\GL_WARP.SBR" : $(SOURCE) $(DEP_CPP_GL_WA) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -5925,11 +6185,17 @@ NODEP_CPP_GLHUD=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\glHud.obj" : $(SOURCE) $(DEP_CPP_GLHUD) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\glHud.obj" : $(SOURCE) $(DEP_CPP_GLHUD) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\glHud.sbr" : $(SOURCE) $(DEP_CPP_GLHUD) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -6024,11 +6290,17 @@ NODEP_CPP_GLIDE=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\glide.obj" : $(SOURCE) $(DEP_CPP_GLIDE) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\glide.obj" : $(SOURCE) $(DEP_CPP_GLIDE) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\glide.sbr" : $(SOURCE) $(DEP_CPP_GLIDE) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -6148,6 +6420,8 @@ NODEP_CPP_HA3D_=\
 
 "$(INTDIR)\ha3d.obj" : $(SOURCE) $(DEP_CPP_HA3D_) "$(INTDIR)"
 
+"$(INTDIR)\ha3d.sbr" : $(SOURCE) $(DEP_CPP_HA3D_) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -6243,6 +6517,8 @@ NODEP_CPP_HA3DG=\
 
 
 "$(INTDIR)\ha3dg.obj" : $(SOURCE) $(DEP_CPP_HA3DG) "$(INTDIR)"
+
+"$(INTDIR)\ha3dg.sbr" : $(SOURCE) $(DEP_CPP_HA3DG) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -6340,6 +6616,8 @@ NODEP_CPP_HASHP=\
 
 
 "$(INTDIR)\hashpak.obj" : $(SOURCE) $(DEP_CPP_HASHP) "$(INTDIR)"
+
+"$(INTDIR)\hashpak.sbr" : $(SOURCE) $(DEP_CPP_HASHP) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -6455,6 +6733,8 @@ NODEP_CPP_HOST_=\
 
 "$(INTDIR)\host.obj" : $(SOURCE) $(DEP_CPP_HOST_) "$(INTDIR)"
 
+"$(INTDIR)\host.sbr" : $(SOURCE) $(DEP_CPP_HOST_) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -6556,6 +6836,8 @@ NODEP_CPP_HOST_C=\
 
 
 "$(INTDIR)\host_cmd.obj" : $(SOURCE) $(DEP_CPP_HOST_C) "$(INTDIR)"
+
+"$(INTDIR)\host_cmd.sbr" : $(SOURCE) $(DEP_CPP_HOST_C) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -6671,6 +6953,8 @@ NODEP_CPP_HUD_C=\
 
 "$(INTDIR)\HUD.obj" : $(SOURCE) $(DEP_CPP_HUD_C) "$(INTDIR)"
 
+"$(INTDIR)\HUD.sbr" : $(SOURCE) $(DEP_CPP_HUD_C) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -6782,6 +7066,8 @@ NODEP_CPP_IN_WI=\
 
 
 "$(INTDIR)\in_win.obj" : $(SOURCE) $(DEP_CPP_IN_WI) "$(INTDIR)"
+
+"$(INTDIR)\in_win.sbr" : $(SOURCE) $(DEP_CPP_IN_WI) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -6895,6 +7181,8 @@ NODEP_CPP_KEYS_=\
 
 "$(INTDIR)\KEYS.OBJ" : $(SOURCE) $(DEP_CPP_KEYS_) "$(INTDIR)"
 
+"$(INTDIR)\KEYS.SBR" : $(SOURCE) $(DEP_CPP_KEYS_) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -7006,6 +7294,8 @@ NODEP_CPP_L_STU=\
 
 "$(INTDIR)\l_studio.obj" : $(SOURCE) $(DEP_CPP_L_STU) "$(INTDIR)"
 
+"$(INTDIR)\l_studio.sbr" : $(SOURCE) $(DEP_CPP_L_STU) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -7100,6 +7390,8 @@ NODEP_CPP_MATHL=\
 
 
 "$(INTDIR)\mathlib.obj" : $(SOURCE) $(DEP_CPP_MATHL) "$(INTDIR)"
+
+"$(INTDIR)\mathlib.sbr" : $(SOURCE) $(DEP_CPP_MATHL) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -7346,6 +7638,8 @@ NODEP_CPP_NET_C=\
 
 "$(INTDIR)\net_chan.obj" : $(SOURCE) $(DEP_CPP_NET_C) "$(INTDIR)"
 
+"$(INTDIR)\net_chan.sbr" : $(SOURCE) $(DEP_CPP_NET_C) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -7441,6 +7735,8 @@ NODEP_CPP_NET_W=\
 
 
 "$(INTDIR)\net_ws.obj" : $(SOURCE) $(DEP_CPP_NET_W) "$(INTDIR)"
+
+"$(INTDIR)\net_ws.sbr" : $(SOURCE) $(DEP_CPP_NET_W) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -7562,11 +7858,9 @@ DEP_CPP_OPENG=\
 	"..\dx6sdk\include\d3dcaps.h"\
 	"..\dx6sdk\include\d3dtypes.h"\
 	"..\dx6sdk\include\d3dvec.inl"\
+	"..\dx6sdk\include\dxmgr_i.c"\
 	".\opengl32.h"\
 	{$(INCLUDE)}"\ocidl.h"\
-	
-NODEP_CPP_OPENG=\
-	"..\dx6sdk\include\dxmgr_i.c"\
 	
 
 !IF  "$(CFG)" == "Quiver - Win32 Release"
@@ -7580,11 +7874,17 @@ NODEP_CPP_OPENG=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\opengl32.obj" : $(SOURCE) $(DEP_CPP_OPENG) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\opengl32.obj" : $(SOURCE) $(DEP_CPP_OPENG) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\opengl32.sbr" : $(SOURCE) $(DEP_CPP_OPENG) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -7700,6 +8000,8 @@ NODEP_CPP_PE_WI=\
 
 "$(INTDIR)\pe_win32.obj" : $(SOURCE) $(DEP_CPP_PE_WI) "$(INTDIR)"
 
+"$(INTDIR)\pe_win32.sbr" : $(SOURCE) $(DEP_CPP_PE_WI) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -7794,6 +8096,8 @@ NODEP_CPP_PHYSI=\
 
 
 "$(INTDIR)\physics.obj" : $(SOURCE) $(DEP_CPP_PHYSI) "$(INTDIR)"
+
+"$(INTDIR)\physics.sbr" : $(SOURCE) $(DEP_CPP_PHYSI) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -7892,6 +8196,8 @@ NODEP_CPP_PMOVE=\
 
 
 "$(INTDIR)\pmove.obj" : $(SOURCE) $(DEP_CPP_PMOVE) "$(INTDIR)"
+
+"$(INTDIR)\pmove.sbr" : $(SOURCE) $(DEP_CPP_PMOVE) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -8006,6 +8312,8 @@ NODEP_CPP_PMOVET=\
 
 "$(INTDIR)\pmovetst.obj" : $(SOURCE) $(DEP_CPP_PMOVET) "$(INTDIR)"
 
+"$(INTDIR)\pmovetst.sbr" : $(SOURCE) $(DEP_CPP_PMOVET) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -8104,6 +8412,8 @@ NODEP_CPP_PR_CM=\
 
 
 "$(INTDIR)\pr_cmds.obj" : $(SOURCE) $(DEP_CPP_PR_CM) "$(INTDIR)"
+
+"$(INTDIR)\pr_cmds.sbr" : $(SOURCE) $(DEP_CPP_PR_CM) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -8232,6 +8542,8 @@ NODEP_CPP_PR_ED=\
 
 
 "$(INTDIR)\pr_edict.obj" : $(SOURCE) $(DEP_CPP_PR_ED) "$(INTDIR)"
+
+"$(INTDIR)\pr_edict.sbr" : $(SOURCE) $(DEP_CPP_PR_ED) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -8402,11 +8714,17 @@ NODEP_CPP_QGL_C=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\qgl.obj" : $(SOURCE) $(DEP_CPP_QGL_C) "$(INTDIR)"
-   $(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I\
- "..\dx6sdk\include" /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D\
- "WIN32" /D "_WINDOWS" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE)
+BuildCmds= \
+	$(CPP) /nologo /MTd /W3 /Gm /GX /Zi /Od /I "..\common" /I "..\dx6sdk\include"\
+ /D "_DEBUG" /D "GLQUAKE" /D "__USEA3D" /D "__A3D_GEOM" /D "WIN32" /D "_WINDOWS"\
+ /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c $(SOURCE) \
+	
 
+"$(INTDIR)\qgl.obj" : $(SOURCE) $(DEP_CPP_QGL_C) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\qgl.sbr" : $(SOURCE) $(DEP_CPP_QGL_C) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -9448,6 +9766,8 @@ NODEP_CPP_R_PAR=\
 
 "$(INTDIR)\R_PART.OBJ" : $(SOURCE) $(DEP_CPP_R_PAR) "$(INTDIR)"
 
+"$(INTDIR)\R_PART.SBR" : $(SOURCE) $(DEP_CPP_R_PAR) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -9764,6 +10084,8 @@ NODEP_CPP_R_STU=\
 
 "$(INTDIR)\r_studio.obj" : $(SOURCE) $(DEP_CPP_R_STU) "$(INTDIR)"
 
+"$(INTDIR)\r_studio.sbr" : $(SOURCE) $(DEP_CPP_R_STU) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -9980,6 +10302,8 @@ NODEP_CPP_R_TRA=\
 
 "$(INTDIR)\r_trans.obj" : $(SOURCE) $(DEP_CPP_R_TRA) "$(INTDIR)"
 
+"$(INTDIR)\r_trans.sbr" : $(SOURCE) $(DEP_CPP_R_TRA) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -10095,6 +10419,8 @@ NODEP_CPP_R_TRI=\
 
 
 "$(INTDIR)\r_triangle.obj" : $(SOURCE) $(DEP_CPP_R_TRI) "$(INTDIR)"
+
+"$(INTDIR)\r_triangle.sbr" : $(SOURCE) $(DEP_CPP_R_TRI) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -10528,6 +10854,8 @@ NODEP_CPP_SND_D=\
 
 "$(INTDIR)\SND_DMA.OBJ" : $(SOURCE) $(DEP_CPP_SND_D) "$(INTDIR)"
 
+"$(INTDIR)\SND_DMA.SBR" : $(SOURCE) $(DEP_CPP_SND_D) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -10623,6 +10951,8 @@ NODEP_CPP_SND_M=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\SND_MEM.OBJ" : $(SOURCE) $(DEP_CPP_SND_M) "$(INTDIR)"
+
+"$(INTDIR)\SND_MEM.SBR" : $(SOURCE) $(DEP_CPP_SND_M) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -10724,6 +11054,8 @@ NODEP_CPP_SND_MI=\
 
 "$(INTDIR)\SND_MIX.OBJ" : $(SOURCE) $(DEP_CPP_SND_MI) "$(INTDIR)"
 
+"$(INTDIR)\SND_MIX.SBR" : $(SOURCE) $(DEP_CPP_SND_MI) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -10822,6 +11154,8 @@ NODEP_CPP_SND_W=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\SND_WIN.OBJ" : $(SOURCE) $(DEP_CPP_SND_W) "$(INTDIR)"
+
+"$(INTDIR)\SND_WIN.SBR" : $(SOURCE) $(DEP_CPP_SND_W) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -10961,6 +11295,8 @@ NODEP_CPP_SV_MA=\
 
 "$(INTDIR)\SV_MAIN.OBJ" : $(SOURCE) $(DEP_CPP_SV_MA) "$(INTDIR)"
 
+"$(INTDIR)\SV_MAIN.SBR" : $(SOURCE) $(DEP_CPP_SV_MA) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -11057,6 +11393,8 @@ NODEP_CPP_SV_MO=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\sv_move.obj" : $(SOURCE) $(DEP_CPP_SV_MO) "$(INTDIR)"
+
+"$(INTDIR)\sv_move.sbr" : $(SOURCE) $(DEP_CPP_SV_MO) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -11156,6 +11494,8 @@ NODEP_CPP_SV_PH=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\sv_phys.obj" : $(SOURCE) $(DEP_CPP_SV_PH) "$(INTDIR)"
+
+"$(INTDIR)\sv_phys.sbr" : $(SOURCE) $(DEP_CPP_SV_PH) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -11273,6 +11613,8 @@ NODEP_CPP_SV_UP=\
 
 "$(INTDIR)\sv_upld.obj" : $(SOURCE) $(DEP_CPP_SV_UP) "$(INTDIR)"
 
+"$(INTDIR)\sv_upld.sbr" : $(SOURCE) $(DEP_CPP_SV_UP) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -11370,6 +11712,8 @@ NODEP_CPP_SV_US=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\sv_user.obj" : $(SOURCE) $(DEP_CPP_SV_US) "$(INTDIR)"
+
+"$(INTDIR)\sv_user.sbr" : $(SOURCE) $(DEP_CPP_SV_US) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -11492,6 +11836,8 @@ NODEP_CPP_SYS_W=\
 
 "$(INTDIR)\sys_win.obj" : $(SOURCE) $(DEP_CPP_SYS_W) "$(INTDIR)"
 
+"$(INTDIR)\sys_win.sbr" : $(SOURCE) $(DEP_CPP_SYS_W) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -11588,6 +11934,8 @@ NODEP_CPP_TEXTU=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\textures.obj" : $(SOURCE) $(DEP_CPP_TEXTU) "$(INTDIR)"
+
+"$(INTDIR)\textures.sbr" : $(SOURCE) $(DEP_CPP_TEXTU) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -11704,6 +12052,8 @@ NODEP_CPP_TMESS=\
 # PROP Exclude_From_Build 0
 
 "$(INTDIR)\tmessage.obj" : $(SOURCE) $(DEP_CPP_TMESS) "$(INTDIR)"
+
+"$(INTDIR)\tmessage.sbr" : $(SOURCE) $(DEP_CPP_TMESS) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -11937,6 +12287,8 @@ NODEP_CPP_VIEW_=\
 
 "$(INTDIR)\VIEW.OBJ" : $(SOURCE) $(DEP_CPP_VIEW_) "$(INTDIR)"
 
+"$(INTDIR)\VIEW.SBR" : $(SOURCE) $(DEP_CPP_VIEW_) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -12063,6 +12415,8 @@ NODEP_CPP_WAD_C=\
 
 
 "$(INTDIR)\wad.obj" : $(SOURCE) $(DEP_CPP_WAD_C) "$(INTDIR)"
+
+"$(INTDIR)\wad.sbr" : $(SOURCE) $(DEP_CPP_WAD_C) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -12209,6 +12563,8 @@ NODEP_CPP_WORLD=\
 
 "$(INTDIR)\world.obj" : $(SOURCE) $(DEP_CPP_WORLD) "$(INTDIR)"
 
+"$(INTDIR)\world.sbr" : $(SOURCE) $(DEP_CPP_WORLD) "$(INTDIR)"
+
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 
@@ -12336,6 +12692,8 @@ NODEP_CPP_ZONE_=\
 
 
 "$(INTDIR)\zone.obj" : $(SOURCE) $(DEP_CPP_ZONE_) "$(INTDIR)"
+
+"$(INTDIR)\zone.sbr" : $(SOURCE) $(DEP_CPP_ZONE_) "$(INTDIR)"
 
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
@@ -13071,7 +13429,7 @@ InputPath=.\worlda.asm
 # Begin Source File
 
 SOURCE=\
-"..\a3dwrapper\a3dwrapper.cpp"
+"\Documents and Settings\Lebert\My Documents\hl_742\a3dwrapper\a3dwrapper.cpp"
 DEP_CPP_A3DWR=\
 	"..\a3dwrapper\a3dwrapper.h"\
 	
@@ -13093,9 +13451,15 @@ DEP_CPP_A3DWR=\
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
 
 
-"$(INTDIR)\a3dwrapper.obj" : $(SOURCE) $(DEP_CPP_A3DWR) "$(INTDIR)"
-   $(CPP) $(CPP_PROJ) $(SOURCE)
+BuildCmds= \
+	$(CPP) $(CPP_PROJ) $(SOURCE) \
+	
 
+"$(INTDIR)\a3dwrapper.obj" : $(SOURCE) $(DEP_CPP_A3DWR) "$(INTDIR)"
+   $(BuildCmds)
+
+"$(INTDIR)\a3dwrapper.sbr" : $(SOURCE) $(DEP_CPP_A3DWR) "$(INTDIR)"
+   $(BuildCmds)
 
 !ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
 

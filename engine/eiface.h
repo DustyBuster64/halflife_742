@@ -4,7 +4,7 @@
 #ifdef HLDEMO_BUILD
 #define INTERFACE_VERSION       001
 #else  // !HLDEMO_BUILD, i.e., regular version of HL
-#define INTERFACE_VERSION		128
+#define INTERFACE_VERSION		129
 #endif // !HLDEMO_BUILD
 
 #include "custom.h"
@@ -290,6 +290,7 @@ typedef struct
 
 #define Q_ARRAYSIZE(p)		(sizeof(p)/sizeof(p[0]))
 
+//TODO: Figure out wtf is pfnClientUserInfoChanged used for -Dusty64
 typedef struct
 {
 	int				(*pfnSpawn)				( edict_t* pent );
@@ -314,6 +315,7 @@ typedef struct
 	void			(*pfnClientKill)		( edict_t* pEntity );
 	void			(*pfnClientPutInServer)	( edict_t* pEntity );
 	void			(*pfnClientCommand)		( edict_t* pEntity ); // JOHN: client 'cmd' commands are passed through to the DLL
+	void			(*pfnClientUserInfoChanged)( edict_t *pEntity, char *infobuffer );
 
 	void			(*pfnServerActivate)	( edict_t* pEdictList, int edictCount, int clientMax );
 

@@ -10,7 +10,7 @@ The file **DeployPath.ini** defines where compiled binaries will be automaticall
 Example:
 ```
 ; Working directory
-root.path="E:\Half-Life NetTest1"
+root.path="E:\Half-Life"
 ```
 
 ## Building
