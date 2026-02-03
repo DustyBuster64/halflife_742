@@ -1,0 +1,16 @@
+@echo off
+cd C:\assets
+C:\hl_742\tools\studiomdl.exe valve\models\V_Crowbar\v_crowbar.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_egon\v_egon.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_gauss\v_gauss.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_GLOCK\v_9mmhandgun.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_grenade\v_grenade.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_HGun\v_HGun.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_HKmp5-sd\v_9mmAR.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_Python\python.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_rpg\v_rpg.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_satchel\v_satchel.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_shotgun\v_shotgun.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_Squeak\v_squeak.qc
+C:\hl_742\tools\studiomdl.exe valve\models\v_tripmine\v_tripmine.qc
+cd C:\hl_742\tools
