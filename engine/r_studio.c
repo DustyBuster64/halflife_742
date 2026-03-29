@@ -83,7 +83,11 @@ void R_StudioProjectFinalVert( finalvert_t* fv, auxvert_t* av );
 void R_LightLambert( float(*light)[4], float* normal, int* src );
 #endif
 void R_StudioChrome( int* pchrome, int bone, vec_t* normal );
+#if !defined( GLQUAKE )
 void R_StudioSetupSkin( mstudiotexture_t* ptexture );
+#else
+void R_StudioSetupSkin( studiohdr_t* ptexturehdr, int index );
+#endif
 void R_LightStrength( int bone, float* vert, float(*light)[4] );
 void R_StudioLighting( float* lv, int bone, int flags, vec_t* normal );
 
@@ -2453,6 +2457,37 @@ void R_StudioChrome( int* pchrome, int bone, vec_t* normal )
 #endif
 }
 
+void R_StudioReloadSkin( const char* modelpath, int index, skin_t* pskin )
+{
+	//Check if we already have the raw texture data in the engine cache
+	if(!Cache_Check(&pskin->source))
+	{
+		studiohdr_t* pstudiohdr;
+		mstudiotexture_t* ptexinfo;
+		int dataSize;
+		void* prawdata;
+
+		pskin->index = index;
+
+		Con_DPrintf("Loading texture from %s\n", modelpath);
+
+		pstudiohdr = (studiohdr_t*)COM_LoadFileForMe(modelpath, NULL);
+		ptexinfo = (mstudiotexture_t*)((byte*)pstudiohdr + pstudiohdr->textureindex + (80 * index));
+
+		pskin->height = ptexinfo->height;
+		pskin->width = ptexinfo->width;
+
+		dataSize = (pskin->width * pskin->height) + 768;
+
+		Cache_Alloc(&pskin->source, dataSize, pskin);
+
+		prawdata = (byte*)pstudiohdr + ptexinfo->index;
+		memcpy(pskin->source, prawdata, dataSize);
+
+		free(pstudiohdr);
+	}
+}
+
 #if !defined( GLQUAKE )
 /*
 ====================
@@ -2482,6 +2517,26 @@ void R_StudioSetupSkin( mstudiotexture_t* ptexture )
 		r_palette = white_pal;
 		return;
 	}
+}
+#else
+/*
+====================
+R_StudioSetupSkin
+
+Loads in appropriate texture for model
+====================
+*/
+void R_StudioSetupSkin( studiohdr_t* ptexturehdr, int index )
+{
+	mstudiotexture_t* ptexture = (mstudiotexture_t*)((byte*)ptexturehdr + ptexturehdr->textureindex) + (80 * index);
+
+	if(currententity)
+	{
+		//TODO: Do something when texture name is DM_Base.bmp
+	}
+
+BindDefault:
+	GL_Bind(index);
 }
 #endif
 
@@ -3293,6 +3348,48 @@ void R_StudioRenderFinal( void )
 
 /*
 ================
+R_LoadTextures
+
+Some models have the textures as an external model file.
+This routine loads these up and bakes them in.
+================
+*/
+studiohdr_t* R_LoadTextures( model_t* psubmodel )
+{
+	model_t* texmodel;
+
+	if( pstudiohdr->textureindex )
+		return pstudiohdr;
+
+	texmodel = ( model_t* ) psubmodel->texinfo;
+
+	if( texmodel != NULL && Cache_Check( &texmodel->cache ) )
+	{
+		return ( studiohdr_t* ) texmodel->cache.data;
+	}
+	else
+	{
+		studiohdr_t* ptexturehdr;
+		char	modelname[ MAX_PATH ];
+
+		strcpy(modelname, psubmodel->name);
+		modelname[ sizeof( modelname ) - 2 ] = '\0';
+		strcpy( &modelname[ strlen(modelname) - 4 ], "T.mdl" );
+
+		texmodel = Mod_ForName( modelname, TRUE );
+		psubmodel->texinfo = ( mtexinfo_t* ) texmodel;
+
+		ptexturehdr = ( ( studiohdr_t* ) texmodel->cache.data );
+
+		strcpy( ptexturehdr->name, modelname );
+		ptexturehdr->name[ sizeof(ptexturehdr->name) - 1 ] = '\0';
+
+		return ptexturehdr;
+	}
+}
+
+/*
+================
 R_StudioDrawPoints
 
 ================
@@ -3305,6 +3402,7 @@ void R_StudioDrawPoints( void )
 	vec3_t* pstudioverts;
 	vec3_t* pstudionorms;
 	mstudiotexture_t* ptexture;
+	studiohdr_t* ptexturehdr;
 	auxvert_t* av;
 	float* lv;
 	vec3_t				fl;
@@ -3314,16 +3412,18 @@ void R_StudioDrawPoints( void )
 
 	pvertbone = ((byte*)pstudiohdr + psubmodel->vertinfoindex);
 	pnormbone = ((byte*)pstudiohdr + psubmodel->norminfoindex);
-	ptexture = (mstudiotexture_t*)((byte*)pstudiohdr + pstudiohdr->textureindex);
+
+	ptexturehdr = R_LoadTextures(currententity->model);
+	ptexture = (mstudiotexture_t*)((byte*)ptexturehdr + ptexturehdr->textureindex);
 
 	pmesh = (mstudiomesh_t*)((byte*)pstudiohdr + psubmodel->meshindex);
 
 	pstudioverts = (vec3_t*)((byte*)pstudiohdr + psubmodel->vertindex);
 	pstudionorms = (vec3_t*)((byte*)pstudiohdr + psubmodel->normindex);
 
-	pskinref = (short*)((byte*)pstudiohdr + pstudiohdr->skinindex);
-	if (currententity->skin != 0 && currententity->skin < pstudiohdr->numskinfamilies)
-		pskinref += (currententity->skin * pstudiohdr->numskinref);
+	pskinref = (short*)((byte*)ptexturehdr + ptexturehdr->skinindex);
+	if (currententity->skin && currententity->skin < ptexturehdr->numskinfamilies)
+		pskinref += currententity->skin * ptexturehdr->numskinref;
 
 	for (i = 0; i < psubmodel->numverts; i++)
 	{
@@ -3393,7 +3493,6 @@ void R_StudioDrawPoints( void )
 
 		c_alias_polys += pmesh->numtris;
 
-
 		flags = ptexture[pskinref[pmesh->skinref]].flags;
 		if (r_fullbright.value >= 2)
 		{
@@ -3409,7 +3508,7 @@ void R_StudioDrawPoints( void )
 			s = 1.0 / ptexture[pskinref[pmesh->skinref]].width;
 			t = 1.0 / ptexture[pskinref[pmesh->skinref]].height;
 
-			GL_Bind(ptexture[pskinref[pmesh->skinref]].index);
+			R_StudioSetupSkin(ptexturehdr, ptexture[pskinref[pmesh->skinref]].index);
 		}
 
 		if (flags & STUDIO_NF_CHROME)

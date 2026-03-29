@@ -10,6 +10,20 @@
 #define STUDIO_TRACE_HITBOX			0x0200	// always use hitbox trace instead of bbox
 #define STUDIO_FORCE_SKYLIGHT		0x400	// always grab lightvalues from the sky settings (even if sky is invisible)
 
+typedef struct
+{
+	int keynum;
+	int topcolor;
+	int bottomcolor;
+	struct model_s *model;
+	char name[260];
+	int index;
+	int source;
+	int width;
+	int height;
+	int gl_index;
+} skin_t;
+
 extern int r_dointerp;
 
 void	AnimationAutomove( const edict_t* pEdict, float flTime );

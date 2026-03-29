@@ -13428,8 +13428,7 @@ InputPath=.\worlda.asm
 ################################################################################
 # Begin Source File
 
-SOURCE=\
-"\Documents and Settings\Lebert\My Documents\hl_742\a3dwrapper\a3dwrapper.cpp"
+SOURCE=\hl_742\a3dwrapper\a3dwrapper.cpp
 DEP_CPP_A3DWR=\
 	"..\a3dwrapper\a3dwrapper.h"\
 	

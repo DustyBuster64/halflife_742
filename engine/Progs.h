@@ -48,7 +48,7 @@ typedef struct
 
 	vec3_t  mins;    // Send bbox down to client for use during prediction.
 	vec3_t  maxs;
-} entity_state_t;
+} entity_state_t; //Dusty: Don't touch this shit, when you try to add a new value the entire engine farts, idfk why
 
 #define	MAX_ENT_LEAFS	24
 typedef struct edict_s
