@@ -2457,6 +2457,74 @@ void R_StudioChrome( int* pchrome, int bone, vec_t* normal )
 #endif
 }
 
+void PaletteHueReplace( color24* palette, int newHue, int start, int end )
+{
+	//Convert 0-255 hue index to 0-360 degrees
+	float targetHue = (float)newHue * (360.0f / 255.0f);
+	int i;
+
+	for(i = start; i <= end; i++)
+	{
+		color24* color = &palette[i];
+
+		float r = color->r / 255.0f;
+		float g = color->g / 255.0f;
+		float b = color->b / 255.0f;
+
+		//Extract value and saturation
+		float maxVal = (r > g) ? ((r > b) ? r : b) : ((g > b) ? g : b);
+		float minVal = (r < g) ? ((r < b) ? r : b) : ((g < b) ? g : b);
+
+		float value = maxVal;
+		float saturation = (maxVal > 0) ? (maxVal - minVal) / maxVal : 0;
+		float minRGB = (1.0f - saturation) * value;
+
+		float resR, resG, resB;
+
+		//Map the target hue to the RGB wheel
+		if(targetHue <= 120.0f)
+		{
+			resB = minRGB;
+			if(targetHue >= 60.0f){
+				resG = value;
+				resR = (value - minRGB) * (120.0f - targetHue) / targetHue + minRGB;
+			} else {
+				resR = value;
+                resG = (value - minRGB) * targetHue / (120.0f - targetHue) + minRGB;
+			}
+		}
+		else if(targetHue > 240.0f)
+		{
+			resG = minRGB;
+			if(targetHue >= 300.0f){
+				resR = value;
+				resB = (value - minRGB) * (360.0f - targetHue) / (targetHue - 240.0f) + minRGB;
+			} else {
+				resB = value;
+				resR = (value - minRGB) * (targetHue - 240.0f) / (360.0f - targetHue) + minRGB;
+			}
+		}
+		else
+		{
+			resR = minRGB;
+			if(targetHue < 180.0f){
+				resG = value;
+				resB = (value - minRGB) * (targetHue - 120.0f) / (240.0f - targetHue) + minRGB;
+			} else {
+				resB = value;
+				resG = (value - minRGB) * (240.0f - targetHue) / (targetHue - 120.0f) + minRGB;
+			}
+		}
+
+		//Scale back to 0-255 and update the palette
+		color->r = (byte)(resR * 255.0f);
+		color->g = (byte)(resG * 255.0f);
+		color->b = (byte)(resB * 255.0f);
+	}
+}
+
+color24 pPal[256];
+
 void R_StudioReloadSkin( const char* modelpath, int index, skin_t* pskin )
 {
 	//Check if we already have the raw texture data in the engine cache
@@ -2472,7 +2540,7 @@ void R_StudioReloadSkin( const char* modelpath, int index, skin_t* pskin )
 		Con_DPrintf("Loading texture from %s\n", modelpath);
 
 		pstudiohdr = (studiohdr_t*)COM_LoadFileForMe(modelpath, NULL);
-		ptexinfo = (mstudiotexture_t*)((byte*)pstudiohdr + pstudiohdr->textureindex + (80 * index));
+		ptexinfo = (mstudiotexture_t*)((byte*)pstudiohdr + pstudiohdr->textureindex);
 
 		pskin->height = ptexinfo->height;
 		pskin->width = ptexinfo->width;
@@ -2528,14 +2596,46 @@ Loads in appropriate texture for model
 */
 void R_StudioSetupSkin( studiohdr_t* ptexturehdr, int index )
 {
-	mstudiotexture_t* ptexture = (mstudiotexture_t*)((byte*)ptexturehdr + ptexturehdr->textureindex) + (80 * index);
+	mstudiotexture_t* ptexture = (mstudiotexture_t*)((byte*)ptexturehdr + ptexturehdr->textureindex);
 
-	if(currententity)
+	if(_strcmpi(ptexture->name, "DM_Base.bmp") == 0)
 	{
-		//TODO: Do something when texture name is DM_Base.bmp
+		int topColor, bottomColor;
+		skin_t* pskin = NULL;
+		char cacheName[256];
+		void* pOriginalPalette;
+
+		R_StudioReloadSkin(ptexturehdr->name, index, pskin);
+		sprintf(cacheName, "%s%d", ptexture->name, currententity->index);
+
+		//Copy the original palette from the model
+		pOriginalPalette = (byte*)pskin->source + (ptexture->width * ptexture->height);
+		memcpy(pPal, pOriginalPalette, sizeof(pPal));
+
+		//TODO: Actually get the colors from the model, this is empty yet, I do notice the colors are retrieved inside R_StudioDrawPlayer
+		//
+		//These look like topcolor and bottomcolor stuff:
+		// dword_10A20D14[1231 * v5] = 256;
+		// dword_10A20D18[1231 * v5] = 256;
+		topColor = pskin->topcolor;
+		bottomColor = pskin->bottomcolor;
+
+		PaletteHueReplace(pPal, topColor, 160, 191);
+		PaletteHueReplace(pPal, bottomColor, 192, 223);
+
+		//TODO: Implement this function and then uncomment
+		//GL_UnloadTexture(cacheName);
+		pskin->gl_index = GL_LoadTexture(cacheName, GLT_STUDIO, pskin->width, pskin->height, pskin->source,
+			0, 0, (byte*)pPal);
+
+		if(pskin->gl_index)
+			GL_Bind(pskin->gl_index);
+		else
+			GL_Bind(ptexture->index);
 	}
 
-BindDefault:
+	//WTF?? Why does it load only one texture per model?
+	//GL_Bind(ptexture->index);
 	GL_Bind(index);
 }
 #endif
