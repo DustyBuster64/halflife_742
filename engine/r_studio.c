@@ -15,9 +15,12 @@
 // Pointer to header block for studio model data
 studiohdr_t* pstudiohdr;
 
+int r_topcolor, r_bottomcolor;
 vec3_t			r_colormix;
 colorVec		r_icolormix;
 vec3_t			r_blightvec[MAXSTUDIOBONES];	// light vectors in bone reference frames
+
+skin_t dmSkins[13];
 
 // Model to world transformation
 float			rotationmatrix[3][4];
@@ -2600,38 +2603,34 @@ void R_StudioSetupSkin( studiohdr_t* ptexturehdr, int index )
 
 	if(_strcmpi(ptexture->name, "DM_Base.bmp") == 0)
 	{
-		int topColor, bottomColor;
-		skin_t* pskin = NULL;
+		skin_t* pskin = &dmSkins[currententity->index];
 		char cacheName[256];
 		void* pOriginalPalette;
 
-		R_StudioReloadSkin(ptexturehdr->name, index, pskin);
-		sprintf(cacheName, "%s%d", ptexture->name, currententity->index);
+		if(pskin->topcolor != r_topcolor || pskin->bottomcolor != r_bottomcolor)
+		{
+			R_StudioReloadSkin(ptexturehdr->name, index, pskin);
+			sprintf(cacheName, "%s%d", ptexture->name, currententity->index);
 
-		//Copy the original palette from the model
-		pOriginalPalette = (byte*)pskin->source + (ptexture->width * ptexture->height);
-		memcpy(pPal, pOriginalPalette, sizeof(pPal));
+			//Copy the original palette from the model
+			pOriginalPalette = (byte*)pskin->source + (ptexture->width * ptexture->height);
+			memcpy(pPal, pOriginalPalette, sizeof(pPal));
 
-		//TODO: Actually get the colors from the model, this is empty yet, I do notice the colors are retrieved inside R_StudioDrawPlayer
-		//
-		//These look like topcolor and bottomcolor stuff:
-		// dword_10A20D14[1231 * v5] = 256;
-		// dword_10A20D18[1231 * v5] = 256;
-		topColor = pskin->topcolor;
-		bottomColor = pskin->bottomcolor;
+			pskin->topcolor = r_topcolor;
+			pskin->bottomcolor = r_bottomcolor;
 
-		PaletteHueReplace(pPal, topColor, 160, 191);
-		PaletteHueReplace(pPal, bottomColor, 192, 223);
+			PaletteHueReplace(pPal, pskin->topcolor, 160, 191);
+			PaletteHueReplace(pPal, pskin->bottomcolor, 192, 223);
 
-		//TODO: Implement this function and then uncomment
-		//GL_UnloadTexture(cacheName);
-		pskin->gl_index = GL_LoadTexture(cacheName, GLT_STUDIO, pskin->width, pskin->height, pskin->source,
-			0, 0, (byte*)pPal);
+			GL_UnloadTexture(cacheName);
+			pskin->gl_index = GL_LoadTexture(cacheName, GLT_STUDIO, pskin->width, pskin->height, pskin->source,
+				0, 0, (byte*)pPal);
 
-		if(pskin->gl_index)
-			GL_Bind(pskin->gl_index);
-		else
-			GL_Bind(ptexture->index);
+			if(pskin->gl_index)
+				GL_Bind(pskin->gl_index);
+			else
+				GL_Bind(ptexture->index);
+		}
 	}
 
 	//WTF?? Why does it load only one texture per model?
@@ -2806,6 +2805,8 @@ int R_StudioDrawPlayer( int flags, player_state_t* pplayer )
 
 	if (flags & STUDIO_RENDER)
 	{
+		r_topcolor = 256;
+		r_bottomcolor = 256;
 		lighting.plightvec = dir;
 		R_StudioDynamicLight(currententity, &lighting);
 

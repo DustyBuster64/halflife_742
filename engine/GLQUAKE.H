@@ -45,6 +45,7 @@ void GL_Upload16( unsigned char* data, int width, int height, qboolean mipmap, i
 int GL_LoadTexture( char* identifier, GL_TEXTURETYPE textureType, int width, int height, unsigned char* data, int mipmap, int iType, unsigned char* pPal );
 int GL_LoadPicTexture( qpic_t* pic, char* pszName );
 void GL_UnloadTextures( void );
+void GL_UnloadTexture( const char* identifier );
 void GL_SelectTexture( GLenum target );
 
 void GL_PaletteClearSky( void );

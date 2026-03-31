@@ -1631,6 +1631,27 @@ void GL_UnloadTextures( void )
 	}
 }
 
+void GL_UnloadTexture( const char* identifier )
+{
+	int i, texnum;
+	gltexture_t* glt;
+
+	for(i = 0; glt = gltextures; i < numgltextures, i++, glt++)
+	{
+		if(strcmp(identifier, glt->identifier))
+		{
+			texnum = glt->texnum;
+			qglDeleteTextures(1, (const GLuint*)glt);
+
+			memset(glt, 0, sizeof(gltexture_t));
+			glt->servercount = -1;
+			glt->texnum = texnum;
+			break;
+		}
+	}
+
+}
+
 void GL_PaletteInit( void )
 {
 	int i;
