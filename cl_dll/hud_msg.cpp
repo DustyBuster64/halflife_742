@@ -22,6 +22,13 @@ int CHud :: MsgFunc_ResetHUD(const char *pszName, int iSize, void *pbuf )
 		pList = pList->pNext;
 	}
 
+	if ( m_flOldSensitivity != 0 )
+	{
+		char buffer[32];
+		sprintf(buffer, "sensitivity %.2f\n", m_flOldSensitivity);
+		ClientCmd(buffer);
+	}
+
 	return 1;
 }
 

@@ -30,9 +30,10 @@ NULL=nul
 !ENDIF 
 ################################################################################
 # Begin Project
+# PROP Target_Last_Scanned "cl_dll - Win32 Debug"
 CPP=cl.exe
-RSC=rc.exe
 MTL=mktyplib.exe
+RSC=rc.exe
 
 !IF  "$(CFG)" == "cl_dll - Win32 Release"
 
@@ -144,30 +145,50 @@ LINK32_OBJS= \
 OUTDIR=.\Debug
 INTDIR=.\Debug
 
-ALL : "$(OUTDIR)\client.dll"
+ALL : "$(OUTDIR)\client.dll" "$(OUTDIR)\cl_dll.bsc"
 
 CLEAN : 
 	-@erase "$(INTDIR)\ammo.obj"
+	-@erase "$(INTDIR)\ammo.sbr"
 	-@erase "$(INTDIR)\ammohistory.obj"
+	-@erase "$(INTDIR)\ammohistory.sbr"
 	-@erase "$(INTDIR)\battery.obj"
+	-@erase "$(INTDIR)\battery.sbr"
 	-@erase "$(INTDIR)\cdll_int.obj"
+	-@erase "$(INTDIR)\cdll_int.sbr"
 	-@erase "$(INTDIR)\death.obj"
+	-@erase "$(INTDIR)\death.sbr"
 	-@erase "$(INTDIR)\flashlight.obj"
+	-@erase "$(INTDIR)\flashlight.sbr"
 	-@erase "$(INTDIR)\geiger.obj"
+	-@erase "$(INTDIR)\geiger.sbr"
 	-@erase "$(INTDIR)\health.obj"
+	-@erase "$(INTDIR)\health.sbr"
 	-@erase "$(INTDIR)\hud.obj"
+	-@erase "$(INTDIR)\hud.sbr"
 	-@erase "$(INTDIR)\hud_msg.obj"
+	-@erase "$(INTDIR)\hud_msg.sbr"
 	-@erase "$(INTDIR)\hud_redraw.obj"
+	-@erase "$(INTDIR)\hud_redraw.sbr"
 	-@erase "$(INTDIR)\hud_update.obj"
+	-@erase "$(INTDIR)\hud_update.sbr"
 	-@erase "$(INTDIR)\message.obj"
+	-@erase "$(INTDIR)\message.sbr"
 	-@erase "$(INTDIR)\MOTD.obj"
+	-@erase "$(INTDIR)\MOTD.sbr"
 	-@erase "$(INTDIR)\parsemsg.obj"
+	-@erase "$(INTDIR)\parsemsg.sbr"
 	-@erase "$(INTDIR)\saytext.obj"
+	-@erase "$(INTDIR)\saytext.sbr"
 	-@erase "$(INTDIR)\scoreboard.obj"
+	-@erase "$(INTDIR)\scoreboard.sbr"
 	-@erase "$(INTDIR)\train.obj"
+	-@erase "$(INTDIR)\train.sbr"
 	-@erase "$(INTDIR)\util.obj"
+	-@erase "$(INTDIR)\util.sbr"
 	-@erase "$(INTDIR)\vc40.idb"
 	-@erase "$(INTDIR)\vc40.pdb"
+	-@erase "$(OUTDIR)\cl_dll.bsc"
 	-@erase "$(OUTDIR)\client.dll"
 	-@erase "$(OUTDIR)\client.exp"
 	-@erase "$(OUTDIR)\client.ilk"
@@ -178,11 +199,12 @@ CLEAN :
     if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
 
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../engine" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../engine" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /FR /YX /c
 CPP_PROJ=/nologo /MTd /W3 /Gm /GX /Zi /Od /I "../engine" /D "WIN32" /D "_DEBUG"\
- /D "_WINDOWS" /Fp"$(INTDIR)/cl_dll.pch" /YX /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c 
+ /D "_WINDOWS" /FR"$(INTDIR)/" /Fp"$(INTDIR)/cl_dll.pch" /YX /Fo"$(INTDIR)/"\
+ /Fd"$(INTDIR)/" /c 
 CPP_OBJS=.\Debug/
-CPP_SBRS=.\.
+CPP_SBRS=.\Debug/
 # ADD BASE MTL /nologo /D "_DEBUG" /win32
 # ADD MTL /nologo /D "_DEBUG" /win32
 MTL_PROJ=/nologo /D "_DEBUG" /win32 
@@ -193,7 +215,31 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 BSC32_FLAGS=/nologo /o"$(OUTDIR)/cl_dll.bsc" 
 BSC32_SBRS= \
-	
+	"$(INTDIR)\ammo.sbr" \
+	"$(INTDIR)\ammohistory.sbr" \
+	"$(INTDIR)\battery.sbr" \
+	"$(INTDIR)\cdll_int.sbr" \
+	"$(INTDIR)\death.sbr" \
+	"$(INTDIR)\flashlight.sbr" \
+	"$(INTDIR)\geiger.sbr" \
+	"$(INTDIR)\health.sbr" \
+	"$(INTDIR)\hud.sbr" \
+	"$(INTDIR)\hud_msg.sbr" \
+	"$(INTDIR)\hud_redraw.sbr" \
+	"$(INTDIR)\hud_update.sbr" \
+	"$(INTDIR)\message.sbr" \
+	"$(INTDIR)\MOTD.sbr" \
+	"$(INTDIR)\parsemsg.sbr" \
+	"$(INTDIR)\saytext.sbr" \
+	"$(INTDIR)\scoreboard.sbr" \
+	"$(INTDIR)\train.sbr" \
+	"$(INTDIR)\util.sbr"
+
+"$(OUTDIR)\cl_dll.bsc" : "$(OUTDIR)" $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /debug /machine:I386
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /debug /machine:I386 /out:"Debug/client.dll"
@@ -302,8 +348,21 @@ DEP_CPP_AMMOH=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\ammohistory.obj" : $(SOURCE) $(DEP_CPP_AMMOH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\ammohistory.obj" : $(SOURCE) $(DEP_CPP_AMMOH) "$(INTDIR)"
+
+"$(INTDIR)\ammohistory.sbr" : $(SOURCE) $(DEP_CPP_AMMOH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -335,8 +394,21 @@ DEP_CPP_BATTE=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\battery.obj" : $(SOURCE) $(DEP_CPP_BATTE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\battery.obj" : $(SOURCE) $(DEP_CPP_BATTE) "$(INTDIR)"
+
+"$(INTDIR)\battery.sbr" : $(SOURCE) $(DEP_CPP_BATTE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -355,8 +427,21 @@ DEP_CPP_CDLL_=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\cdll_int.obj" : $(SOURCE) $(DEP_CPP_CDLL_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\cdll_int.obj" : $(SOURCE) $(DEP_CPP_CDLL_) "$(INTDIR)"
+
+"$(INTDIR)\cdll_int.sbr" : $(SOURCE) $(DEP_CPP_CDLL_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -388,8 +473,21 @@ DEP_CPP_DEATH=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\death.obj" : $(SOURCE) $(DEP_CPP_DEATH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\death.obj" : $(SOURCE) $(DEP_CPP_DEATH) "$(INTDIR)"
+
+"$(INTDIR)\death.sbr" : $(SOURCE) $(DEP_CPP_DEATH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -409,8 +507,21 @@ DEP_CPP_FLASH=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\flashlight.obj" : $(SOURCE) $(DEP_CPP_FLASH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\flashlight.obj" : $(SOURCE) $(DEP_CPP_FLASH) "$(INTDIR)"
+
+"$(INTDIR)\flashlight.sbr" : $(SOURCE) $(DEP_CPP_FLASH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -430,8 +541,21 @@ DEP_CPP_GEIGE=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\geiger.obj" : $(SOURCE) $(DEP_CPP_GEIGE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\geiger.obj" : $(SOURCE) $(DEP_CPP_GEIGE) "$(INTDIR)"
+
+"$(INTDIR)\geiger.sbr" : $(SOURCE) $(DEP_CPP_GEIGE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -451,8 +575,21 @@ DEP_CPP_HEALT=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\health.obj" : $(SOURCE) $(DEP_CPP_HEALT) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\health.obj" : $(SOURCE) $(DEP_CPP_HEALT) "$(INTDIR)"
+
+"$(INTDIR)\health.sbr" : $(SOURCE) $(DEP_CPP_HEALT) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -484,8 +621,21 @@ DEP_CPP_HUD_C=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\hud.obj" : $(SOURCE) $(DEP_CPP_HUD_C) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\hud.obj" : $(SOURCE) $(DEP_CPP_HUD_C) "$(INTDIR)"
+
+"$(INTDIR)\hud.sbr" : $(SOURCE) $(DEP_CPP_HUD_C) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -517,8 +667,21 @@ DEP_CPP_HUD_M=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\hud_msg.obj" : $(SOURCE) $(DEP_CPP_HUD_M) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\hud_msg.obj" : $(SOURCE) $(DEP_CPP_HUD_M) "$(INTDIR)"
+
+"$(INTDIR)\hud_msg.sbr" : $(SOURCE) $(DEP_CPP_HUD_M) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -537,8 +700,21 @@ DEP_CPP_HUD_R=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\hud_redraw.obj" : $(SOURCE) $(DEP_CPP_HUD_R) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\hud_redraw.obj" : $(SOURCE) $(DEP_CPP_HUD_R) "$(INTDIR)"
+
+"$(INTDIR)\hud_redraw.sbr" : $(SOURCE) $(DEP_CPP_HUD_R) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -557,8 +733,21 @@ DEP_CPP_HUD_U=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\hud_update.obj" : $(SOURCE) $(DEP_CPP_HUD_U) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\hud_update.obj" : $(SOURCE) $(DEP_CPP_HUD_U) "$(INTDIR)"
+
+"$(INTDIR)\hud_update.sbr" : $(SOURCE) $(DEP_CPP_HUD_U) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -578,8 +767,21 @@ DEP_CPP_MESSA=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\message.obj" : $(SOURCE) $(DEP_CPP_MESSA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\message.obj" : $(SOURCE) $(DEP_CPP_MESSA) "$(INTDIR)"
+
+"$(INTDIR)\message.sbr" : $(SOURCE) $(DEP_CPP_MESSA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -599,8 +801,21 @@ DEP_CPP_MOTD_=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\MOTD.obj" : $(SOURCE) $(DEP_CPP_MOTD_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\MOTD.obj" : $(SOURCE) $(DEP_CPP_MOTD_) "$(INTDIR)"
+
+"$(INTDIR)\MOTD.sbr" : $(SOURCE) $(DEP_CPP_MOTD_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -608,8 +823,21 @@ DEP_CPP_MOTD_=\
 
 SOURCE=.\parsemsg.cpp
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\parsemsg.obj" : $(SOURCE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\parsemsg.obj" : $(SOURCE) "$(INTDIR)"
+
+"$(INTDIR)\parsemsg.sbr" : $(SOURCE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -641,8 +869,21 @@ DEP_CPP_SAYTE=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\saytext.obj" : $(SOURCE) $(DEP_CPP_SAYTE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\saytext.obj" : $(SOURCE) $(DEP_CPP_SAYTE) "$(INTDIR)"
+
+"$(INTDIR)\saytext.sbr" : $(SOURCE) $(DEP_CPP_SAYTE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -662,8 +903,21 @@ DEP_CPP_SCORE=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\scoreboard.obj" : $(SOURCE) $(DEP_CPP_SCORE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\scoreboard.obj" : $(SOURCE) $(DEP_CPP_SCORE) "$(INTDIR)"
+
+"$(INTDIR)\scoreboard.sbr" : $(SOURCE) $(DEP_CPP_SCORE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -683,8 +937,21 @@ DEP_CPP_TRAIN=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\train.obj" : $(SOURCE) $(DEP_CPP_TRAIN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\train.obj" : $(SOURCE) $(DEP_CPP_TRAIN) "$(INTDIR)"
+
+"$(INTDIR)\train.sbr" : $(SOURCE) $(DEP_CPP_TRAIN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -703,8 +970,21 @@ DEP_CPP_UTIL_=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\util.obj" : $(SOURCE) $(DEP_CPP_UTIL_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\util.obj" : $(SOURCE) $(DEP_CPP_UTIL_) "$(INTDIR)"
+
+"$(INTDIR)\util.sbr" : $(SOURCE) $(DEP_CPP_UTIL_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -737,8 +1017,21 @@ DEP_CPP_AMMO_=\
 	".\util_vector.h"\
 	
 
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
 "$(INTDIR)\ammo.obj" : $(SOURCE) $(DEP_CPP_AMMO_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\ammo.obj" : $(SOURCE) $(DEP_CPP_AMMO_) "$(INTDIR)"
+
+"$(INTDIR)\ammo.sbr" : $(SOURCE) $(DEP_CPP_AMMO_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 # End Target

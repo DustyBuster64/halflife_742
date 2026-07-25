@@ -175,17 +175,35 @@ public:
 	int MsgFunc_ScoreInfo( const char *pszName, int iSize, void *pbuf );
 	void DeathMsg( int killer, int victim );
 
+	enum { 
+		MAX_PLAYERS = 64,
+		MAX_TEAMS = 64,
+		MAX_TEAM_NAME = 16,
+	};
+
 	struct extra_player_info_t {
 		short frags;
 		short deaths;
+		char teamname[MAX_TEAM_NAME];
 	};
 
-	enum { 
-		MAX_PLAYERS = 64,
+	struct team_info_t {
+		char name[MAX_TEAM_NAME];
+		short frags;
+		short deaths;
+		short ping;
+		short packetloss;
+		short ownteam;
+		short players;
+		int already_drawn;
+		int scores_overriden;
 	};
 
 	hud_player_info_t m_PlayerInfoList[MAX_PLAYERS+1];	   // player info from the engine
 	extra_player_info_t m_PlayerExtraInfo[MAX_PLAYERS+1];  // additional player info sent directly to the client dll
+	team_info_t m_TeamInfo[MAX_TEAMS+1];
+
+	int m_iNumTeams;
 
 	int m_iLastKilledBy;
 	int m_fLastKillTime;

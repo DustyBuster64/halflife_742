@@ -104,6 +104,108 @@ int CHudScoreboard :: Draw( float fTime )
 	
 	list_slot += 0.8;
 
+	if ( m_iNumTeams > 0 )
+	{
+		for( int i = 1; i <= m_iNumTeams; i++ )
+		{
+			m_TeamInfo[i].frags = m_TeamInfo[i].deaths = 0;
+			m_TeamInfo[i].ping = 0;
+
+			for( int j = 1; j < MAX_PLAYERS; j++ )
+			{
+				if ( m_PlayerInfoList[j].name == NULL )
+					continue; // empty player slot, skip
+
+				if ( m_PlayerExtraInfo[j].teamname[0] == 0 )
+					continue; // skip over players who are not in a team
+
+				m_TeamInfo[i].players++;
+				m_TeamInfo[i].frags += m_PlayerExtraInfo[j].frags;
+				m_TeamInfo[i].deaths += m_PlayerExtraInfo[j].deaths;
+				m_TeamInfo[i].ping += m_PlayerInfoList[j].ping;
+			}
+
+			if( m_TeamInfo[i].players )
+				m_TeamInfo[i].ping /= m_TeamInfo[i].players;
+		}
+	}
+
+	// Draw the teams
+	while ( 1 )
+	{
+		int highest_frags = -99999; int lowest_deaths = 99999;
+		int best_team = 0;
+
+		for( int i = 1; i <= m_iNumTeams; i++ )
+		{
+			if( m_TeamInfo[i].already_drawn )
+				continue;
+
+			if( m_TeamInfo[i].frags >= highest_frags )
+			{
+				if( m_TeamInfo[i].frags > highest_frags || m_TeamInfo[i].deaths < lowest_deaths )
+				{
+					highest_frags = m_TeamInfo[i].frags;
+					lowest_deaths = m_TeamInfo[i].deaths;
+					best_team = i;
+				}
+			}
+		}
+
+		// draw the best team on the scoreboard
+		if( !best_team )
+			break;
+
+		// draw out the best team
+		team_info_t *team_info = &m_TeamInfo[best_team];
+
+		int ypos = ROW_RANGE_MIN + (list_slot * ROW_GAP);
+
+		// check we haven't drawn too far down
+		if ( ypos > ROW_RANGE_MAX )  // don't draw to close to the lower border
+			break;
+
+		xpos = NAME_RANGE_MIN + xpos_rel;
+		int r = 255, g = 225, b = 55; // draw the stuff kinda yellowish
+
+		if ( team_info->ownteam ) // if it is their team, draw the background different color
+		{
+			// overlay the background in blue,  then draw the score text over it
+			FillRGBA( NAME_RANGE_MIN + xpos_rel - 5, ypos, PING_RANGE_MAX - 5, ROW_GAP, 0, 0, 255, 70 );
+		}
+
+		// draw their name (left to right)
+		gHUD.DrawHudString( xpos, ypos, NAME_RANGE_MAX + xpos_rel, team_info->name, r, g, b );
+
+		// draw kills (right to left)
+		xpos = KILLS_RANGE_MAX + xpos_rel;
+		gHUD.DrawHudNumberString( xpos, ypos, KILLS_RANGE_MIN + xpos_rel, team_info->frags, r, g, b );
+
+		// draw divider
+		xpos = DIVIDER_POS + xpos_rel;
+		gHUD.DrawHudString( xpos, ypos, xpos + 20, "/", r, g, b );
+
+		// draw deaths
+		xpos = DEATHS_RANGE_MAX + xpos_rel;
+		gHUD.DrawHudNumberString( xpos, ypos, DEATHS_RANGE_MIN + xpos_rel, team_info->deaths, r, g, b );
+
+		// draw ping
+		xpos = PING_RANGE_MAX + xpos_rel;
+		gHUD.DrawHudNumberString( xpos, ypos, PING_RANGE_MIN + xpos_rel, team_info->ping, 255,160,0);
+
+		/*  Packetloss removed on Kelly 'shipping nazi' Bailey's orders
+			sprintf( buf, " %d", team_info->packetloss );
+			gHUD.DrawHudString( xpos, ypos, xpos+50, buf, r, g, b );
+		*/
+
+		//Dusty64: Eyo tf, kelly is a nazi???? :exploding_head:
+
+		team_info->already_drawn = TRUE;
+		list_slot++;
+	}
+
+	list_slot += 0.5f;
+
 	// draw the players, in order
 	while ( 1 )
 	{
