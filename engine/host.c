@@ -119,6 +119,23 @@ cvar_t	sk_bullsquid_dmg_spit1 = { "sk_bullsquid_dmg_spit1", "0" };
 cvar_t	sk_bullsquid_dmg_spit2 = { "sk_bullsquid_dmg_spit2", "0" };
 cvar_t	sk_bullsquid_dmg_spit3 = { "sk_bullsquid_dmg_spit3", "0" };
 
+// Big Momma
+cvar_t	sk_bigmomma_health_factor1 = { "sk_bigmomma_health_factor1", "1.0" };
+cvar_t	sk_bigmomma_health_factor2 = { "sk_bigmomma_health_factor2", "1.0" };
+cvar_t	sk_bigmomma_health_factor3 = { "sk_bigmomma_health_factor3", "1.0" };
+
+cvar_t	sk_bigmomma_dmg_slash1 = { "sk_bigmomma_dmg_slash1", "50" };
+cvar_t	sk_bigmomma_dmg_slash2 = { "sk_bigmomma_dmg_slash2", "50" };
+cvar_t	sk_bigmomma_dmg_slash3 = { "sk_bigmomma_dmg_slash3", "50" };
+
+cvar_t	sk_bigmomma_dmg_blast1 = { "sk_bigmomma_dmg_blast1", "100" };
+cvar_t	sk_bigmomma_dmg_blast2 = { "sk_bigmomma_dmg_blast2", "100" };
+cvar_t	sk_bigmomma_dmg_blast3 = { "sk_bigmomma_dmg_blast3", "100" };
+
+cvar_t	sk_bigmomma_radius_blast1 = { "sk_bigmomma_radius_blast1", "250" };
+cvar_t	sk_bigmomma_radius_blast2 = { "sk_bigmomma_radius_blast2", "250" };
+cvar_t	sk_bigmomma_radius_blast3 = { "sk_bigmomma_radius_blast3", "250" };
+
 // Gargantua
 cvar_t	sk_gargantua_health1 = { "sk_gargantua_health1", "0" };
 cvar_t	sk_gargantua_health2 = { "sk_gargantua_health2", "0" };
@@ -744,6 +761,22 @@ void Host_InitLocal( void )
 	Cvar_RegisterVariable(&sk_bullsquid_dmg_spit1);// {"sk_bullsquid_dmg_spit1","0"};
 	Cvar_RegisterVariable(&sk_bullsquid_dmg_spit2);// {"sk_bullsquid_dmg_spit2","0"};
 	Cvar_RegisterVariable(&sk_bullsquid_dmg_spit3);// {"sk_bullsquid_dmg_spit3","0"};
+
+	Cvar_RegisterVariable(&sk_bigmomma_health_factor1);// {"sk_bigmomma_health_factor1","1.0"};
+	Cvar_RegisterVariable(&sk_bigmomma_health_factor2);// {"sk_bigmomma_health_factor2","1.0"};
+	Cvar_RegisterVariable(&sk_bigmomma_health_factor3);// {"sk_bigmomma_health_factor3","1.0"};
+
+	Cvar_RegisterVariable(&sk_bigmomma_dmg_slash1);// {"sk_bigmomma_dmg_slash1","50"};
+	Cvar_RegisterVariable(&sk_bigmomma_dmg_slash2);// {"sk_bigmomma_dmg_slash2","50"};
+	Cvar_RegisterVariable(&sk_bigmomma_dmg_slash3);// {"sk_bigmomma_dmg_slash3","50"};
+
+	Cvar_RegisterVariable(&sk_bigmomma_dmg_blast1);// {"sk_bigmomma_dmg_blast1","100"};
+	Cvar_RegisterVariable(&sk_bigmomma_dmg_blast2);// {"sk_bigmomma_dmg_blast2","100"};
+	Cvar_RegisterVariable(&sk_bigmomma_dmg_blast3);// {"sk_bigmomma_dmg_blast3","100"};
+
+	Cvar_RegisterVariable(&sk_bigmomma_radius_blast1);// {"sk_bigmomma_radius_blast1","250"};
+	Cvar_RegisterVariable(&sk_bigmomma_radius_blast2);// {"sk_bigmomma_radius_blast2","250"};
+	Cvar_RegisterVariable(&sk_bigmomma_radius_blast3);// {"sk_bigmomma_radius_blast3","250"};
 
 	// Gargantua
 	Cvar_RegisterVariable(&sk_gargantua_health1);// {"sk_gargantua_health1","0"};
