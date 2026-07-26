@@ -65,6 +65,7 @@ CLEAN :
 	-@erase "$(INTDIR)\hud_msg.obj"
 	-@erase "$(INTDIR)\hud_redraw.obj"
 	-@erase "$(INTDIR)\hud_update.obj"
+	-@erase "$(INTDIR)\menu.obj"
 	-@erase "$(INTDIR)\message.obj"
 	-@erase "$(INTDIR)\MOTD.obj"
 	-@erase "$(INTDIR)\parsemsg.obj"
@@ -117,6 +118,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\hud_msg.obj" \
 	"$(INTDIR)\hud_redraw.obj" \
 	"$(INTDIR)\hud_update.obj" \
+	"$(INTDIR)\menu.obj" \
 	"$(INTDIR)\message.obj" \
 	"$(INTDIR)\MOTD.obj" \
 	"$(INTDIR)\parsemsg.obj" \
@@ -172,6 +174,8 @@ CLEAN :
 	-@erase "$(INTDIR)\hud_redraw.sbr"
 	-@erase "$(INTDIR)\hud_update.obj"
 	-@erase "$(INTDIR)\hud_update.sbr"
+	-@erase "$(INTDIR)\menu.obj"
+	-@erase "$(INTDIR)\menu.sbr"
 	-@erase "$(INTDIR)\message.obj"
 	-@erase "$(INTDIR)\message.sbr"
 	-@erase "$(INTDIR)\MOTD.obj"
@@ -227,6 +231,7 @@ BSC32_SBRS= \
 	"$(INTDIR)\hud_msg.sbr" \
 	"$(INTDIR)\hud_redraw.sbr" \
 	"$(INTDIR)\hud_update.sbr" \
+	"$(INTDIR)\menu.sbr" \
 	"$(INTDIR)\message.sbr" \
 	"$(INTDIR)\MOTD.sbr" \
 	"$(INTDIR)\parsemsg.sbr" \
@@ -261,6 +266,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\hud_msg.obj" \
 	"$(INTDIR)\hud_redraw.obj" \
 	"$(INTDIR)\hud_update.obj" \
+	"$(INTDIR)\menu.obj" \
 	"$(INTDIR)\message.obj" \
 	"$(INTDIR)\MOTD.obj" \
 	"$(INTDIR)\parsemsg.obj" \
@@ -1029,6 +1035,40 @@ DEP_CPP_AMMO_=\
 "$(INTDIR)\ammo.obj" : $(SOURCE) $(DEP_CPP_AMMO_) "$(INTDIR)"
 
 "$(INTDIR)\ammo.sbr" : $(SOURCE) $(DEP_CPP_AMMO_) "$(INTDIR)"
+
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\menu.cpp
+DEP_CPP_MENU_=\
+	"..\dlls\cdll_dll.h"\
+	"..\engine\cdll_int.h"\
+	"..\engine\cvardef.h"\
+	".\ammo.h"\
+	".\cl_dll.h"\
+	".\health.h"\
+	".\hud.h"\
+	".\parsemsg.h"\
+	".\util.h"\
+	".\util_vector.h"\
+	
+
+!IF  "$(CFG)" == "cl_dll - Win32 Release"
+
+
+"$(INTDIR)\menu.obj" : $(SOURCE) $(DEP_CPP_MENU_) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "cl_dll - Win32 Debug"
+
+
+"$(INTDIR)\menu.obj" : $(SOURCE) $(DEP_CPP_MENU_) "$(INTDIR)"
+
+"$(INTDIR)\menu.sbr" : $(SOURCE) $(DEP_CPP_MENU_) "$(INTDIR)"
 
 
 !ENDIF 

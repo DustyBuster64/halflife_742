@@ -388,10 +388,16 @@ HSPRITE_t* WeaponsResource :: GetAmmoPicFromWeapon( int iAmmoId, wrect_t& rect )
 
 void WeaponsResource :: SelectSlot( int iSlot, int fAdvance, int iDirection )
 {
-	if ( iSlot > MAX_WEAPON_SLOTS )
+	if ( gHUD.m_Menu.m_fMenuDisplayed && (fAdvance == FALSE) && (iDirection == 1) )
+	{
+		gHUD.m_Menu.SelectMenuItem( iSlot );
 		return;
+	}
 
 	if ( gHUD.m_fPlayerDead || gHUD.m_iHideHUDDisplay & ( HIDEHUD_WEAPONS | HIDEHUD_ALL ) )
+		return;
+
+	if ( !gHUD.m_iWeaponBits )
 		return;
 
 	WEAPON *p = NULL;
