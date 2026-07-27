@@ -32,8 +32,8 @@ NULL=nul
 # Begin Project
 # PROP Target_Last_Scanned "hl - Win32 Debug"
 MTL=mktyplib.exe
-CPP=cl.exe
 RSC=rc.exe
+CPP=cl.exe
 
 !IF  "$(CFG)" == "hl - Win32 Release"
 
@@ -298,103 +298,196 @@ LINK32_OBJS= \
 OUTDIR=.\Debughl
 INTDIR=.\Debughl
 
-ALL : "$(OUTDIR)\hl.dll"
+ALL : "$(OUTDIR)\hl.dll" "$(OUTDIR)\hl.bsc"
 
 CLEAN : 
 	-@erase "$(INTDIR)\aflock.obj"
+	-@erase "$(INTDIR)\aflock.sbr"
 	-@erase "$(INTDIR)\agrunt.obj"
+	-@erase "$(INTDIR)\agrunt.sbr"
 	-@erase "$(INTDIR)\airtank.obj"
+	-@erase "$(INTDIR)\airtank.sbr"
 	-@erase "$(INTDIR)\animation.obj"
+	-@erase "$(INTDIR)\animation.sbr"
 	-@erase "$(INTDIR)\apache.obj"
+	-@erase "$(INTDIR)\apache.sbr"
 	-@erase "$(INTDIR)\barnacle.obj"
+	-@erase "$(INTDIR)\barnacle.sbr"
 	-@erase "$(INTDIR)\barney.obj"
+	-@erase "$(INTDIR)\barney.sbr"
 	-@erase "$(INTDIR)\bigmomma.obj"
+	-@erase "$(INTDIR)\bigmomma.sbr"
 	-@erase "$(INTDIR)\bloater.obj"
+	-@erase "$(INTDIR)\bloater.sbr"
 	-@erase "$(INTDIR)\bmodels.obj"
+	-@erase "$(INTDIR)\bmodels.sbr"
 	-@erase "$(INTDIR)\bullsquid.obj"
+	-@erase "$(INTDIR)\bullsquid.sbr"
 	-@erase "$(INTDIR)\buttons.obj"
+	-@erase "$(INTDIR)\buttons.sbr"
 	-@erase "$(INTDIR)\cbase.obj"
+	-@erase "$(INTDIR)\cbase.sbr"
 	-@erase "$(INTDIR)\client.obj"
+	-@erase "$(INTDIR)\client.sbr"
 	-@erase "$(INTDIR)\combat.obj"
+	-@erase "$(INTDIR)\combat.sbr"
 	-@erase "$(INTDIR)\controller.obj"
+	-@erase "$(INTDIR)\controller.sbr"
 	-@erase "$(INTDIR)\crossbow.obj"
+	-@erase "$(INTDIR)\crossbow.sbr"
 	-@erase "$(INTDIR)\crowbar.obj"
+	-@erase "$(INTDIR)\crowbar.sbr"
 	-@erase "$(INTDIR)\defaultai.obj"
+	-@erase "$(INTDIR)\defaultai.sbr"
 	-@erase "$(INTDIR)\doors.obj"
+	-@erase "$(INTDIR)\doors.sbr"
 	-@erase "$(INTDIR)\effects.obj"
+	-@erase "$(INTDIR)\effects.sbr"
 	-@erase "$(INTDIR)\egon.obj"
+	-@erase "$(INTDIR)\egon.sbr"
 	-@erase "$(INTDIR)\explode.obj"
+	-@erase "$(INTDIR)\explode.sbr"
 	-@erase "$(INTDIR)\flyingmonster.obj"
+	-@erase "$(INTDIR)\flyingmonster.sbr"
 	-@erase "$(INTDIR)\func_break.obj"
+	-@erase "$(INTDIR)\func_break.sbr"
 	-@erase "$(INTDIR)\func_tank.obj"
+	-@erase "$(INTDIR)\func_tank.sbr"
 	-@erase "$(INTDIR)\gamerules.obj"
+	-@erase "$(INTDIR)\gamerules.sbr"
 	-@erase "$(INTDIR)\gargantua.obj"
+	-@erase "$(INTDIR)\gargantua.sbr"
 	-@erase "$(INTDIR)\gauss.obj"
+	-@erase "$(INTDIR)\gauss.sbr"
 	-@erase "$(INTDIR)\genericmonster.obj"
+	-@erase "$(INTDIR)\genericmonster.sbr"
 	-@erase "$(INTDIR)\ggrenade.obj"
+	-@erase "$(INTDIR)\ggrenade.sbr"
 	-@erase "$(INTDIR)\globals.obj"
+	-@erase "$(INTDIR)\globals.sbr"
 	-@erase "$(INTDIR)\glock.obj"
+	-@erase "$(INTDIR)\glock.sbr"
 	-@erase "$(INTDIR)\gman.obj"
+	-@erase "$(INTDIR)\gman.sbr"
 	-@erase "$(INTDIR)\h_ai.obj"
+	-@erase "$(INTDIR)\h_ai.sbr"
 	-@erase "$(INTDIR)\h_battery.obj"
+	-@erase "$(INTDIR)\h_battery.sbr"
 	-@erase "$(INTDIR)\h_cine.obj"
+	-@erase "$(INTDIR)\h_cine.sbr"
 	-@erase "$(INTDIR)\h_cycler.obj"
+	-@erase "$(INTDIR)\h_cycler.sbr"
 	-@erase "$(INTDIR)\h_export.obj"
+	-@erase "$(INTDIR)\h_export.sbr"
 	-@erase "$(INTDIR)\handgrenade.obj"
+	-@erase "$(INTDIR)\handgrenade.sbr"
 	-@erase "$(INTDIR)\hassassin.obj"
+	-@erase "$(INTDIR)\hassassin.sbr"
 	-@erase "$(INTDIR)\headcrab.obj"
+	-@erase "$(INTDIR)\headcrab.sbr"
 	-@erase "$(INTDIR)\healthkit.obj"
+	-@erase "$(INTDIR)\healthkit.sbr"
 	-@erase "$(INTDIR)\hgrunt.obj"
+	-@erase "$(INTDIR)\hgrunt.sbr"
 	-@erase "$(INTDIR)\hornet.obj"
+	-@erase "$(INTDIR)\hornet.sbr"
 	-@erase "$(INTDIR)\hornetgun.obj"
+	-@erase "$(INTDIR)\hornetgun.sbr"
 	-@erase "$(INTDIR)\houndeye.obj"
+	-@erase "$(INTDIR)\houndeye.sbr"
 	-@erase "$(INTDIR)\ichthyosaur.obj"
+	-@erase "$(INTDIR)\ichthyosaur.sbr"
 	-@erase "$(INTDIR)\islave.obj"
+	-@erase "$(INTDIR)\islave.sbr"
 	-@erase "$(INTDIR)\items.obj"
+	-@erase "$(INTDIR)\items.sbr"
 	-@erase "$(INTDIR)\leech.obj"
+	-@erase "$(INTDIR)\leech.sbr"
 	-@erase "$(INTDIR)\lights.obj"
+	-@erase "$(INTDIR)\lights.sbr"
 	-@erase "$(INTDIR)\monstermaker.obj"
+	-@erase "$(INTDIR)\monstermaker.sbr"
 	-@erase "$(INTDIR)\monsters.obj"
+	-@erase "$(INTDIR)\monsters.sbr"
 	-@erase "$(INTDIR)\monsterstate.obj"
+	-@erase "$(INTDIR)\monsterstate.sbr"
 	-@erase "$(INTDIR)\mortar.obj"
+	-@erase "$(INTDIR)\mortar.sbr"
 	-@erase "$(INTDIR)\mp5.obj"
+	-@erase "$(INTDIR)\mp5.sbr"
 	-@erase "$(INTDIR)\multiplay_gamerules.obj"
+	-@erase "$(INTDIR)\multiplay_gamerules.sbr"
 	-@erase "$(INTDIR)\nihilanth.obj"
+	-@erase "$(INTDIR)\nihilanth.sbr"
 	-@erase "$(INTDIR)\nodes.obj"
+	-@erase "$(INTDIR)\nodes.sbr"
 	-@erase "$(INTDIR)\osprey.obj"
+	-@erase "$(INTDIR)\osprey.sbr"
 	-@erase "$(INTDIR)\pathcorner.obj"
+	-@erase "$(INTDIR)\pathcorner.sbr"
 	-@erase "$(INTDIR)\plane.obj"
+	-@erase "$(INTDIR)\plane.sbr"
 	-@erase "$(INTDIR)\plats.obj"
+	-@erase "$(INTDIR)\plats.sbr"
 	-@erase "$(INTDIR)\player.obj"
+	-@erase "$(INTDIR)\player.sbr"
 	-@erase "$(INTDIR)\python.obj"
+	-@erase "$(INTDIR)\python.sbr"
 	-@erase "$(INTDIR)\rat.obj"
+	-@erase "$(INTDIR)\rat.sbr"
 	-@erase "$(INTDIR)\roach.obj"
+	-@erase "$(INTDIR)\roach.sbr"
 	-@erase "$(INTDIR)\rpg.obj"
+	-@erase "$(INTDIR)\rpg.sbr"
 	-@erase "$(INTDIR)\satchel.obj"
+	-@erase "$(INTDIR)\satchel.sbr"
 	-@erase "$(INTDIR)\scientist.obj"
+	-@erase "$(INTDIR)\scientist.sbr"
 	-@erase "$(INTDIR)\scripted.obj"
+	-@erase "$(INTDIR)\scripted.sbr"
 	-@erase "$(INTDIR)\shotgun.obj"
+	-@erase "$(INTDIR)\shotgun.sbr"
 	-@erase "$(INTDIR)\singleplay_gamerules.obj"
+	-@erase "$(INTDIR)\singleplay_gamerules.sbr"
 	-@erase "$(INTDIR)\skill.obj"
+	-@erase "$(INTDIR)\skill.sbr"
 	-@erase "$(INTDIR)\sound.obj"
+	-@erase "$(INTDIR)\sound.sbr"
 	-@erase "$(INTDIR)\soundent.obj"
+	-@erase "$(INTDIR)\soundent.sbr"
 	-@erase "$(INTDIR)\spectator.obj"
+	-@erase "$(INTDIR)\spectator.sbr"
 	-@erase "$(INTDIR)\squadmonster.obj"
+	-@erase "$(INTDIR)\squadmonster.sbr"
 	-@erase "$(INTDIR)\squeakgrenade.obj"
+	-@erase "$(INTDIR)\squeakgrenade.sbr"
 	-@erase "$(INTDIR)\subs.obj"
+	-@erase "$(INTDIR)\subs.sbr"
 	-@erase "$(INTDIR)\talkmonster.obj"
+	-@erase "$(INTDIR)\talkmonster.sbr"
 	-@erase "$(INTDIR)\tempmonster.obj"
+	-@erase "$(INTDIR)\tempmonster.sbr"
 	-@erase "$(INTDIR)\tentacle.obj"
+	-@erase "$(INTDIR)\tentacle.sbr"
 	-@erase "$(INTDIR)\triggers.obj"
+	-@erase "$(INTDIR)\triggers.sbr"
 	-@erase "$(INTDIR)\tripmine.obj"
+	-@erase "$(INTDIR)\tripmine.sbr"
 	-@erase "$(INTDIR)\turret.obj"
+	-@erase "$(INTDIR)\turret.sbr"
 	-@erase "$(INTDIR)\util.obj"
+	-@erase "$(INTDIR)\util.sbr"
 	-@erase "$(INTDIR)\vc40.idb"
 	-@erase "$(INTDIR)\vc40.pdb"
 	-@erase "$(INTDIR)\weapons.obj"
+	-@erase "$(INTDIR)\weapons.sbr"
 	-@erase "$(INTDIR)\world.obj"
+	-@erase "$(INTDIR)\world.sbr"
 	-@erase "$(INTDIR)\xen.obj"
+	-@erase "$(INTDIR)\xen.sbr"
 	-@erase "$(INTDIR)\zombie.obj"
+	-@erase "$(INTDIR)\zombie.sbr"
+	-@erase "$(OUTDIR)\hl.bsc"
 	-@erase "$(OUTDIR)\hl.dll"
 	-@erase "$(OUTDIR)\hl.exp"
 	-@erase "$(OUTDIR)\hl.ilk"
@@ -405,13 +498,13 @@ CLEAN :
     if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
 
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /c
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../engine" /I "../common" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "QUIVER" /D "VOXEL" /D "QUAKE2" /D "VALVE_DLL" /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../engine" /I "../common" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "QUIVER" /D "VOXEL" /D "QUAKE2" /D "VALVE_DLL" /FR /c
 # SUBTRACT CPP /YX
 CPP_PROJ=/nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../engine" /I "../common" /D\
  "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "QUIVER" /D "VOXEL" /D "QUAKE2" /D\
- "VALVE_DLL" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c 
+ "VALVE_DLL" /FR"$(INTDIR)/" /Fo"$(INTDIR)/" /Fd"$(INTDIR)/" /c 
 CPP_OBJS=.\Debughl/
-CPP_SBRS=.\.
+CPP_SBRS=.\Debughl/
 # ADD BASE MTL /nologo /D "_DEBUG" /win32
 # ADD MTL /nologo /D "_DEBUG" /win32
 MTL_PROJ=/nologo /D "_DEBUG" /win32 
@@ -422,7 +515,104 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 BSC32_FLAGS=/nologo /o"$(OUTDIR)/hl.bsc" 
 BSC32_SBRS= \
-	
+	"$(INTDIR)\aflock.sbr" \
+	"$(INTDIR)\agrunt.sbr" \
+	"$(INTDIR)\airtank.sbr" \
+	"$(INTDIR)\animation.sbr" \
+	"$(INTDIR)\apache.sbr" \
+	"$(INTDIR)\barnacle.sbr" \
+	"$(INTDIR)\barney.sbr" \
+	"$(INTDIR)\bigmomma.sbr" \
+	"$(INTDIR)\bloater.sbr" \
+	"$(INTDIR)\bmodels.sbr" \
+	"$(INTDIR)\bullsquid.sbr" \
+	"$(INTDIR)\buttons.sbr" \
+	"$(INTDIR)\cbase.sbr" \
+	"$(INTDIR)\client.sbr" \
+	"$(INTDIR)\combat.sbr" \
+	"$(INTDIR)\controller.sbr" \
+	"$(INTDIR)\crossbow.sbr" \
+	"$(INTDIR)\crowbar.sbr" \
+	"$(INTDIR)\defaultai.sbr" \
+	"$(INTDIR)\doors.sbr" \
+	"$(INTDIR)\effects.sbr" \
+	"$(INTDIR)\egon.sbr" \
+	"$(INTDIR)\explode.sbr" \
+	"$(INTDIR)\flyingmonster.sbr" \
+	"$(INTDIR)\func_break.sbr" \
+	"$(INTDIR)\func_tank.sbr" \
+	"$(INTDIR)\gamerules.sbr" \
+	"$(INTDIR)\gargantua.sbr" \
+	"$(INTDIR)\gauss.sbr" \
+	"$(INTDIR)\genericmonster.sbr" \
+	"$(INTDIR)\ggrenade.sbr" \
+	"$(INTDIR)\globals.sbr" \
+	"$(INTDIR)\glock.sbr" \
+	"$(INTDIR)\gman.sbr" \
+	"$(INTDIR)\h_ai.sbr" \
+	"$(INTDIR)\h_battery.sbr" \
+	"$(INTDIR)\h_cine.sbr" \
+	"$(INTDIR)\h_cycler.sbr" \
+	"$(INTDIR)\h_export.sbr" \
+	"$(INTDIR)\handgrenade.sbr" \
+	"$(INTDIR)\hassassin.sbr" \
+	"$(INTDIR)\headcrab.sbr" \
+	"$(INTDIR)\healthkit.sbr" \
+	"$(INTDIR)\hgrunt.sbr" \
+	"$(INTDIR)\hornet.sbr" \
+	"$(INTDIR)\hornetgun.sbr" \
+	"$(INTDIR)\houndeye.sbr" \
+	"$(INTDIR)\ichthyosaur.sbr" \
+	"$(INTDIR)\islave.sbr" \
+	"$(INTDIR)\items.sbr" \
+	"$(INTDIR)\leech.sbr" \
+	"$(INTDIR)\lights.sbr" \
+	"$(INTDIR)\monstermaker.sbr" \
+	"$(INTDIR)\monsters.sbr" \
+	"$(INTDIR)\monsterstate.sbr" \
+	"$(INTDIR)\mortar.sbr" \
+	"$(INTDIR)\mp5.sbr" \
+	"$(INTDIR)\multiplay_gamerules.sbr" \
+	"$(INTDIR)\nihilanth.sbr" \
+	"$(INTDIR)\nodes.sbr" \
+	"$(INTDIR)\osprey.sbr" \
+	"$(INTDIR)\pathcorner.sbr" \
+	"$(INTDIR)\plane.sbr" \
+	"$(INTDIR)\plats.sbr" \
+	"$(INTDIR)\player.sbr" \
+	"$(INTDIR)\python.sbr" \
+	"$(INTDIR)\rat.sbr" \
+	"$(INTDIR)\roach.sbr" \
+	"$(INTDIR)\rpg.sbr" \
+	"$(INTDIR)\satchel.sbr" \
+	"$(INTDIR)\scientist.sbr" \
+	"$(INTDIR)\scripted.sbr" \
+	"$(INTDIR)\shotgun.sbr" \
+	"$(INTDIR)\singleplay_gamerules.sbr" \
+	"$(INTDIR)\skill.sbr" \
+	"$(INTDIR)\sound.sbr" \
+	"$(INTDIR)\soundent.sbr" \
+	"$(INTDIR)\spectator.sbr" \
+	"$(INTDIR)\squadmonster.sbr" \
+	"$(INTDIR)\squeakgrenade.sbr" \
+	"$(INTDIR)\subs.sbr" \
+	"$(INTDIR)\talkmonster.sbr" \
+	"$(INTDIR)\tempmonster.sbr" \
+	"$(INTDIR)\tentacle.sbr" \
+	"$(INTDIR)\triggers.sbr" \
+	"$(INTDIR)\tripmine.sbr" \
+	"$(INTDIR)\turret.sbr" \
+	"$(INTDIR)\util.sbr" \
+	"$(INTDIR)\weapons.sbr" \
+	"$(INTDIR)\world.sbr" \
+	"$(INTDIR)\xen.sbr" \
+	"$(INTDIR)\zombie.sbr"
+
+"$(OUTDIR)\hl.bsc" : "$(OUTDIR)" $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /debug /machine:I386
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /debug /machine:I386
@@ -617,8 +807,21 @@ DEP_CPP_AFLOC=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\aflock.obj" : $(SOURCE) $(DEP_CPP_AFLOC) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\aflock.obj" : $(SOURCE) $(DEP_CPP_AFLOC) "$(INTDIR)"
+
+"$(INTDIR)\aflock.sbr" : $(SOURCE) $(DEP_CPP_AFLOC) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -652,8 +855,21 @@ DEP_CPP_AGRUN=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\agrunt.obj" : $(SOURCE) $(DEP_CPP_AGRUN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\agrunt.obj" : $(SOURCE) $(DEP_CPP_AGRUN) "$(INTDIR)"
+
+"$(INTDIR)\agrunt.sbr" : $(SOURCE) $(DEP_CPP_AGRUN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -686,8 +902,21 @@ DEP_CPP_AIRTA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\airtank.obj" : $(SOURCE) $(DEP_CPP_AIRTA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\airtank.obj" : $(SOURCE) $(DEP_CPP_AIRTA) "$(INTDIR)"
+
+"$(INTDIR)\airtank.sbr" : $(SOURCE) $(DEP_CPP_AIRTA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -712,8 +941,21 @@ DEP_CPP_ANIMA=\
 	".\scriptevent.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\animation.obj" : $(SOURCE) $(DEP_CPP_ANIMA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\animation.obj" : $(SOURCE) $(DEP_CPP_ANIMA) "$(INTDIR)"
+
+"$(INTDIR)\animation.sbr" : $(SOURCE) $(DEP_CPP_ANIMA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -758,8 +1000,21 @@ DEP_CPP_APACH=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\apache.obj" : $(SOURCE) $(DEP_CPP_APACH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\apache.obj" : $(SOURCE) $(DEP_CPP_APACH) "$(INTDIR)"
+
+"$(INTDIR)\apache.sbr" : $(SOURCE) $(DEP_CPP_APACH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -789,8 +1044,21 @@ DEP_CPP_BARNA=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\barnacle.obj" : $(SOURCE) $(DEP_CPP_BARNA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\barnacle.obj" : $(SOURCE) $(DEP_CPP_BARNA) "$(INTDIR)"
+
+"$(INTDIR)\barnacle.sbr" : $(SOURCE) $(DEP_CPP_BARNA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -826,8 +1094,21 @@ DEP_CPP_BARNE=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\barney.obj" : $(SOURCE) $(DEP_CPP_BARNE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\barney.obj" : $(SOURCE) $(DEP_CPP_BARNE) "$(INTDIR)"
+
+"$(INTDIR)\barney.sbr" : $(SOURCE) $(DEP_CPP_BARNE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -871,8 +1152,21 @@ DEP_CPP_BIGMO=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\bigmomma.obj" : $(SOURCE) $(DEP_CPP_BIGMO) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\bigmomma.obj" : $(SOURCE) $(DEP_CPP_BIGMO) "$(INTDIR)"
+
+"$(INTDIR)\bigmomma.sbr" : $(SOURCE) $(DEP_CPP_BIGMO) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -902,8 +1196,21 @@ DEP_CPP_BLOAT=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\bloater.obj" : $(SOURCE) $(DEP_CPP_BLOAT) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\bloater.obj" : $(SOURCE) $(DEP_CPP_BLOAT) "$(INTDIR)"
+
+"$(INTDIR)\bloater.sbr" : $(SOURCE) $(DEP_CPP_BLOAT) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -932,8 +1239,21 @@ DEP_CPP_BMODE=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\bmodels.obj" : $(SOURCE) $(DEP_CPP_BMODE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\bmodels.obj" : $(SOURCE) $(DEP_CPP_BMODE) "$(INTDIR)"
+
+"$(INTDIR)\bmodels.sbr" : $(SOURCE) $(DEP_CPP_BMODE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -967,8 +1287,21 @@ DEP_CPP_BULLS=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\bullsquid.obj" : $(SOURCE) $(DEP_CPP_BULLS) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\bullsquid.obj" : $(SOURCE) $(DEP_CPP_BULLS) "$(INTDIR)"
+
+"$(INTDIR)\bullsquid.sbr" : $(SOURCE) $(DEP_CPP_BULLS) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -997,8 +1330,21 @@ DEP_CPP_BUTTO=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\buttons.obj" : $(SOURCE) $(DEP_CPP_BUTTO) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\buttons.obj" : $(SOURCE) $(DEP_CPP_BUTTO) "$(INTDIR)"
+
+"$(INTDIR)\buttons.sbr" : $(SOURCE) $(DEP_CPP_BUTTO) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1029,8 +1375,21 @@ DEP_CPP_CBASE=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\cbase.obj" : $(SOURCE) $(DEP_CPP_CBASE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\cbase.obj" : $(SOURCE) $(DEP_CPP_CBASE) "$(INTDIR)"
+
+"$(INTDIR)\cbase.sbr" : $(SOURCE) $(DEP_CPP_CBASE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1089,8 +1448,21 @@ DEP_CPP_COMBA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\combat.obj" : $(SOURCE) $(DEP_CPP_COMBA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\combat.obj" : $(SOURCE) $(DEP_CPP_COMBA) "$(INTDIR)"
+
+"$(INTDIR)\combat.sbr" : $(SOURCE) $(DEP_CPP_COMBA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1123,8 +1495,21 @@ DEP_CPP_CONTR=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\controller.obj" : $(SOURCE) $(DEP_CPP_CONTR) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\controller.obj" : $(SOURCE) $(DEP_CPP_CONTR) "$(INTDIR)"
+
+"$(INTDIR)\controller.sbr" : $(SOURCE) $(DEP_CPP_CONTR) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1158,8 +1543,21 @@ DEP_CPP_CROSS=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\crossbow.obj" : $(SOURCE) $(DEP_CPP_CROSS) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\crossbow.obj" : $(SOURCE) $(DEP_CPP_CROSS) "$(INTDIR)"
+
+"$(INTDIR)\crossbow.sbr" : $(SOURCE) $(DEP_CPP_CROSS) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1193,8 +1591,21 @@ DEP_CPP_CROWB=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\crowbar.obj" : $(SOURCE) $(DEP_CPP_CROWB) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\crowbar.obj" : $(SOURCE) $(DEP_CPP_CROWB) "$(INTDIR)"
+
+"$(INTDIR)\crowbar.sbr" : $(SOURCE) $(DEP_CPP_CROWB) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1241,8 +1652,21 @@ DEP_CPP_DEFAU=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\defaultai.obj" : $(SOURCE) $(DEP_CPP_DEFAU) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\defaultai.obj" : $(SOURCE) $(DEP_CPP_DEFAU) "$(INTDIR)"
+
+"$(INTDIR)\defaultai.sbr" : $(SOURCE) $(DEP_CPP_DEFAU) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1283,8 +1707,21 @@ DEP_CPP_DOORS=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\doors.obj" : $(SOURCE) $(DEP_CPP_DOORS) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\doors.obj" : $(SOURCE) $(DEP_CPP_DOORS) "$(INTDIR)"
+
+"$(INTDIR)\doors.sbr" : $(SOURCE) $(DEP_CPP_DOORS) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1332,8 +1769,21 @@ DEP_CPP_EFFEC=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\effects.obj" : $(SOURCE) $(DEP_CPP_EFFEC) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\effects.obj" : $(SOURCE) $(DEP_CPP_EFFEC) "$(INTDIR)"
+
+"$(INTDIR)\effects.sbr" : $(SOURCE) $(DEP_CPP_EFFEC) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1381,8 +1831,21 @@ DEP_CPP_EGON_=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\egon.obj" : $(SOURCE) $(DEP_CPP_EGON_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\egon.obj" : $(SOURCE) $(DEP_CPP_EGON_) "$(INTDIR)"
+
+"$(INTDIR)\egon.sbr" : $(SOURCE) $(DEP_CPP_EGON_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1424,8 +1887,21 @@ DEP_CPP_EXPLO=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\explode.obj" : $(SOURCE) $(DEP_CPP_EXPLO) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\explode.obj" : $(SOURCE) $(DEP_CPP_EXPLO) "$(INTDIR)"
+
+"$(INTDIR)\explode.sbr" : $(SOURCE) $(DEP_CPP_EXPLO) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1480,8 +1956,21 @@ DEP_CPP_FLYIN=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\flyingmonster.obj" : $(SOURCE) $(DEP_CPP_FLYIN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\flyingmonster.obj" : $(SOURCE) $(DEP_CPP_FLYIN) "$(INTDIR)"
+
+"$(INTDIR)\flyingmonster.sbr" : $(SOURCE) $(DEP_CPP_FLYIN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1524,8 +2013,21 @@ DEP_CPP_FUNC_=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\func_break.obj" : $(SOURCE) $(DEP_CPP_FUNC_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\func_break.obj" : $(SOURCE) $(DEP_CPP_FUNC_) "$(INTDIR)"
+
+"$(INTDIR)\func_break.sbr" : $(SOURCE) $(DEP_CPP_FUNC_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1569,8 +2071,21 @@ DEP_CPP_FUNC_T=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\func_tank.obj" : $(SOURCE) $(DEP_CPP_FUNC_T) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\func_tank.obj" : $(SOURCE) $(DEP_CPP_FUNC_T) "$(INTDIR)"
+
+"$(INTDIR)\func_tank.sbr" : $(SOURCE) $(DEP_CPP_FUNC_T) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1602,8 +2117,21 @@ DEP_CPP_GAMER=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\gamerules.obj" : $(SOURCE) $(DEP_CPP_GAMER) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\gamerules.obj" : $(SOURCE) $(DEP_CPP_GAMER) "$(INTDIR)"
+
+"$(INTDIR)\gamerules.sbr" : $(SOURCE) $(DEP_CPP_GAMER) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1653,8 +2181,21 @@ DEP_CPP_GARGA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\gargantua.obj" : $(SOURCE) $(DEP_CPP_GARGA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\gargantua.obj" : $(SOURCE) $(DEP_CPP_GARGA) "$(INTDIR)"
+
+"$(INTDIR)\gargantua.sbr" : $(SOURCE) $(DEP_CPP_GARGA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1690,8 +2231,21 @@ DEP_CPP_GAUSS=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\gauss.obj" : $(SOURCE) $(DEP_CPP_GAUSS) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\gauss.obj" : $(SOURCE) $(DEP_CPP_GAUSS) "$(INTDIR)"
+
+"$(INTDIR)\gauss.sbr" : $(SOURCE) $(DEP_CPP_GAUSS) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1721,8 +2275,21 @@ DEP_CPP_GENER=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\genericmonster.obj" : $(SOURCE) $(DEP_CPP_GENER) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\genericmonster.obj" : $(SOURCE) $(DEP_CPP_GENER) "$(INTDIR)"
+
+"$(INTDIR)\genericmonster.sbr" : $(SOURCE) $(DEP_CPP_GENER) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1756,8 +2323,21 @@ DEP_CPP_GGREN=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\ggrenade.obj" : $(SOURCE) $(DEP_CPP_GGREN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\ggrenade.obj" : $(SOURCE) $(DEP_CPP_GGREN) "$(INTDIR)"
+
+"$(INTDIR)\ggrenade.sbr" : $(SOURCE) $(DEP_CPP_GGREN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1786,8 +2366,21 @@ DEP_CPP_GLOBA=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\globals.obj" : $(SOURCE) $(DEP_CPP_GLOBA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\globals.obj" : $(SOURCE) $(DEP_CPP_GLOBA) "$(INTDIR)"
+
+"$(INTDIR)\globals.sbr" : $(SOURCE) $(DEP_CPP_GLOBA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1820,8 +2413,21 @@ DEP_CPP_GLOCK=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\glock.obj" : $(SOURCE) $(DEP_CPP_GLOCK) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\glock.obj" : $(SOURCE) $(DEP_CPP_GLOCK) "$(INTDIR)"
+
+"$(INTDIR)\glock.sbr" : $(SOURCE) $(DEP_CPP_GLOCK) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1852,8 +2458,21 @@ DEP_CPP_GMAN_=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\gman.obj" : $(SOURCE) $(DEP_CPP_GMAN_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\gman.obj" : $(SOURCE) $(DEP_CPP_GMAN_) "$(INTDIR)"
+
+"$(INTDIR)\gman.sbr" : $(SOURCE) $(DEP_CPP_GMAN_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1883,8 +2502,21 @@ DEP_CPP_H_AI_=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\h_ai.obj" : $(SOURCE) $(DEP_CPP_H_AI_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\h_ai.obj" : $(SOURCE) $(DEP_CPP_H_AI_) "$(INTDIR)"
+
+"$(INTDIR)\h_ai.sbr" : $(SOURCE) $(DEP_CPP_H_AI_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1914,8 +2546,21 @@ DEP_CPP_H_BAT=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\h_battery.obj" : $(SOURCE) $(DEP_CPP_H_BAT) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\h_battery.obj" : $(SOURCE) $(DEP_CPP_H_BAT) "$(INTDIR)"
+
+"$(INTDIR)\h_battery.sbr" : $(SOURCE) $(DEP_CPP_H_BAT) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1946,8 +2591,21 @@ DEP_CPP_H_CIN=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\h_cine.obj" : $(SOURCE) $(DEP_CPP_H_CIN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\h_cine.obj" : $(SOURCE) $(DEP_CPP_H_CIN) "$(INTDIR)"
+
+"$(INTDIR)\h_cine.sbr" : $(SOURCE) $(DEP_CPP_H_CIN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -1980,8 +2638,21 @@ DEP_CPP_H_CYC=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\h_cycler.obj" : $(SOURCE) $(DEP_CPP_H_CYC) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\h_cycler.obj" : $(SOURCE) $(DEP_CPP_H_CYC) "$(INTDIR)"
+
+"$(INTDIR)\h_cycler.sbr" : $(SOURCE) $(DEP_CPP_H_CYC) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2009,8 +2680,21 @@ DEP_CPP_H_EXP=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\h_export.obj" : $(SOURCE) $(DEP_CPP_H_EXP) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\h_export.obj" : $(SOURCE) $(DEP_CPP_H_EXP) "$(INTDIR)"
+
+"$(INTDIR)\h_export.sbr" : $(SOURCE) $(DEP_CPP_H_EXP) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2043,8 +2727,21 @@ DEP_CPP_HANDG=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\handgrenade.obj" : $(SOURCE) $(DEP_CPP_HANDG) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\handgrenade.obj" : $(SOURCE) $(DEP_CPP_HANDG) "$(INTDIR)"
+
+"$(INTDIR)\handgrenade.sbr" : $(SOURCE) $(DEP_CPP_HANDG) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2077,8 +2774,21 @@ DEP_CPP_HASSA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\hassassin.obj" : $(SOURCE) $(DEP_CPP_HASSA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\hassassin.obj" : $(SOURCE) $(DEP_CPP_HASSA) "$(INTDIR)"
+
+"$(INTDIR)\hassassin.sbr" : $(SOURCE) $(DEP_CPP_HASSA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2108,8 +2818,21 @@ DEP_CPP_HEADC=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\headcrab.obj" : $(SOURCE) $(DEP_CPP_HEADC) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\headcrab.obj" : $(SOURCE) $(DEP_CPP_HEADC) "$(INTDIR)"
+
+"$(INTDIR)\headcrab.sbr" : $(SOURCE) $(DEP_CPP_HEADC) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2144,8 +2867,21 @@ DEP_CPP_HEALT=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\healthkit.obj" : $(SOURCE) $(DEP_CPP_HEALT) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\healthkit.obj" : $(SOURCE) $(DEP_CPP_HEALT) "$(INTDIR)"
+
+"$(INTDIR)\healthkit.sbr" : $(SOURCE) $(DEP_CPP_HEALT) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2183,8 +2919,21 @@ DEP_CPP_HGRUN=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\hgrunt.obj" : $(SOURCE) $(DEP_CPP_HGRUN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\hgrunt.obj" : $(SOURCE) $(DEP_CPP_HGRUN) "$(INTDIR)"
+
+"$(INTDIR)\hgrunt.sbr" : $(SOURCE) $(DEP_CPP_HGRUN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2218,8 +2967,21 @@ DEP_CPP_HORNE=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\hornet.obj" : $(SOURCE) $(DEP_CPP_HORNE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\hornet.obj" : $(SOURCE) $(DEP_CPP_HORNE) "$(INTDIR)"
+
+"$(INTDIR)\hornet.sbr" : $(SOURCE) $(DEP_CPP_HORNE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2266,8 +3028,21 @@ DEP_CPP_HORNET=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\hornetgun.obj" : $(SOURCE) $(DEP_CPP_HORNET) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\hornetgun.obj" : $(SOURCE) $(DEP_CPP_HORNET) "$(INTDIR)"
+
+"$(INTDIR)\hornetgun.sbr" : $(SOURCE) $(DEP_CPP_HORNET) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2301,8 +3076,21 @@ DEP_CPP_HOUND=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\houndeye.obj" : $(SOURCE) $(DEP_CPP_HOUND) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\houndeye.obj" : $(SOURCE) $(DEP_CPP_HOUND) "$(INTDIR)"
+
+"$(INTDIR)\houndeye.sbr" : $(SOURCE) $(DEP_CPP_HOUND) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2338,8 +3126,21 @@ DEP_CPP_ICHTH=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\ichthyosaur.obj" : $(SOURCE) $(DEP_CPP_ICHTH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\ichthyosaur.obj" : $(SOURCE) $(DEP_CPP_ICHTH) "$(INTDIR)"
+
+"$(INTDIR)\ichthyosaur.sbr" : $(SOURCE) $(DEP_CPP_ICHTH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2373,8 +3174,21 @@ DEP_CPP_ISLAV=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\islave.obj" : $(SOURCE) $(DEP_CPP_ISLAV) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\islave.obj" : $(SOURCE) $(DEP_CPP_ISLAV) "$(INTDIR)"
+
+"$(INTDIR)\islave.sbr" : $(SOURCE) $(DEP_CPP_ISLAV) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2407,8 +3221,21 @@ DEP_CPP_ITEMS=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\items.obj" : $(SOURCE) $(DEP_CPP_ITEMS) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\items.obj" : $(SOURCE) $(DEP_CPP_ITEMS) "$(INTDIR)"
+
+"$(INTDIR)\items.sbr" : $(SOURCE) $(DEP_CPP_ITEMS) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2451,8 +3278,21 @@ DEP_CPP_LEECH=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\leech.obj" : $(SOURCE) $(DEP_CPP_LEECH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\leech.obj" : $(SOURCE) $(DEP_CPP_LEECH) "$(INTDIR)"
+
+"$(INTDIR)\leech.sbr" : $(SOURCE) $(DEP_CPP_LEECH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2480,8 +3320,21 @@ DEP_CPP_LIGHT=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\lights.obj" : $(SOURCE) $(DEP_CPP_LIGHT) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\lights.obj" : $(SOURCE) $(DEP_CPP_LIGHT) "$(INTDIR)"
+
+"$(INTDIR)\lights.sbr" : $(SOURCE) $(DEP_CPP_LIGHT) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2523,8 +3376,21 @@ DEP_CPP_MONST=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\monstermaker.obj" : $(SOURCE) $(DEP_CPP_MONST) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\monstermaker.obj" : $(SOURCE) $(DEP_CPP_MONST) "$(INTDIR)"
+
+"$(INTDIR)\monstermaker.sbr" : $(SOURCE) $(DEP_CPP_MONST) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2564,8 +3430,21 @@ DEP_CPP_MONSTE=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\monsters.obj" : $(SOURCE) $(DEP_CPP_MONSTE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\monsters.obj" : $(SOURCE) $(DEP_CPP_MONSTE) "$(INTDIR)"
+
+"$(INTDIR)\monsters.sbr" : $(SOURCE) $(DEP_CPP_MONSTE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2610,8 +3489,21 @@ DEP_CPP_MONSTER=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\monsterstate.obj" : $(SOURCE) $(DEP_CPP_MONSTER) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\monsterstate.obj" : $(SOURCE) $(DEP_CPP_MONSTER) "$(INTDIR)"
+
+"$(INTDIR)\monsterstate.sbr" : $(SOURCE) $(DEP_CPP_MONSTER) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2642,8 +3534,21 @@ DEP_CPP_MORTA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\mortar.obj" : $(SOURCE) $(DEP_CPP_MORTA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\mortar.obj" : $(SOURCE) $(DEP_CPP_MORTA) "$(INTDIR)"
+
+"$(INTDIR)\mortar.sbr" : $(SOURCE) $(DEP_CPP_MORTA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2678,8 +3583,21 @@ DEP_CPP_MP5_C=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\mp5.obj" : $(SOURCE) $(DEP_CPP_MP5_C) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\mp5.obj" : $(SOURCE) $(DEP_CPP_MP5_C) "$(INTDIR)"
+
+"$(INTDIR)\mp5.sbr" : $(SOURCE) $(DEP_CPP_MP5_C) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2712,8 +3630,21 @@ DEP_CPP_MULTI=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\multiplay_gamerules.obj" : $(SOURCE) $(DEP_CPP_MULTI) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\multiplay_gamerules.obj" : $(SOURCE) $(DEP_CPP_MULTI) "$(INTDIR)"
+
+"$(INTDIR)\multiplay_gamerules.sbr" : $(SOURCE) $(DEP_CPP_MULTI) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2746,8 +3677,21 @@ DEP_CPP_NIHIL=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\nihilanth.obj" : $(SOURCE) $(DEP_CPP_NIHIL) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\nihilanth.obj" : $(SOURCE) $(DEP_CPP_NIHIL) "$(INTDIR)"
+
+"$(INTDIR)\nihilanth.sbr" : $(SOURCE) $(DEP_CPP_NIHIL) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2780,8 +3724,21 @@ DEP_CPP_NODES=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\nodes.obj" : $(SOURCE) $(DEP_CPP_NODES) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\nodes.obj" : $(SOURCE) $(DEP_CPP_NODES) "$(INTDIR)"
+
+"$(INTDIR)\nodes.sbr" : $(SOURCE) $(DEP_CPP_NODES) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2828,8 +3785,21 @@ DEP_CPP_OSPRE=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\osprey.obj" : $(SOURCE) $(DEP_CPP_OSPRE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\osprey.obj" : $(SOURCE) $(DEP_CPP_OSPRE) "$(INTDIR)"
+
+"$(INTDIR)\osprey.sbr" : $(SOURCE) $(DEP_CPP_OSPRE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2858,8 +3828,21 @@ DEP_CPP_PATHC=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\pathcorner.obj" : $(SOURCE) $(DEP_CPP_PATHC) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\pathcorner.obj" : $(SOURCE) $(DEP_CPP_PATHC) "$(INTDIR)"
+
+"$(INTDIR)\pathcorner.sbr" : $(SOURCE) $(DEP_CPP_PATHC) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2880,8 +3863,21 @@ DEP_CPP_PLANE=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\plane.obj" : $(SOURCE) $(DEP_CPP_PLANE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\plane.obj" : $(SOURCE) $(DEP_CPP_PLANE) "$(INTDIR)"
+
+"$(INTDIR)\plane.sbr" : $(SOURCE) $(DEP_CPP_PLANE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2922,8 +3918,21 @@ DEP_CPP_PLATS=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\plats.obj" : $(SOURCE) $(DEP_CPP_PLATS) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\plats.obj" : $(SOURCE) $(DEP_CPP_PLATS) "$(INTDIR)"
+
+"$(INTDIR)\plats.sbr" : $(SOURCE) $(DEP_CPP_PLATS) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -2961,8 +3970,21 @@ DEP_CPP_PLAYE=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\player.obj" : $(SOURCE) $(DEP_CPP_PLAYE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\player.obj" : $(SOURCE) $(DEP_CPP_PLAYE) "$(INTDIR)"
+
+"$(INTDIR)\player.sbr" : $(SOURCE) $(DEP_CPP_PLAYE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3007,8 +4029,21 @@ DEP_CPP_PYTHO=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\python.obj" : $(SOURCE) $(DEP_CPP_PYTHO) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\python.obj" : $(SOURCE) $(DEP_CPP_PYTHO) "$(INTDIR)"
+
+"$(INTDIR)\python.sbr" : $(SOURCE) $(DEP_CPP_PYTHO) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3038,8 +4073,21 @@ DEP_CPP_RAT_C=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\rat.obj" : $(SOURCE) $(DEP_CPP_RAT_C) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\rat.obj" : $(SOURCE) $(DEP_CPP_RAT_C) "$(INTDIR)"
+
+"$(INTDIR)\rat.sbr" : $(SOURCE) $(DEP_CPP_RAT_C) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3071,8 +4119,21 @@ DEP_CPP_ROACH=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\roach.obj" : $(SOURCE) $(DEP_CPP_ROACH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\roach.obj" : $(SOURCE) $(DEP_CPP_ROACH) "$(INTDIR)"
+
+"$(INTDIR)\roach.sbr" : $(SOURCE) $(DEP_CPP_ROACH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3106,8 +4167,21 @@ DEP_CPP_RPG_C=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\rpg.obj" : $(SOURCE) $(DEP_CPP_RPG_C) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\rpg.obj" : $(SOURCE) $(DEP_CPP_RPG_C) "$(INTDIR)"
+
+"$(INTDIR)\rpg.sbr" : $(SOURCE) $(DEP_CPP_RPG_C) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3141,8 +4215,21 @@ DEP_CPP_SATCH=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\satchel.obj" : $(SOURCE) $(DEP_CPP_SATCH) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\satchel.obj" : $(SOURCE) $(DEP_CPP_SATCH) "$(INTDIR)"
+
+"$(INTDIR)\satchel.sbr" : $(SOURCE) $(DEP_CPP_SATCH) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3202,8 +4289,21 @@ DEP_CPP_SCIEN=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\scientist.obj" : $(SOURCE) $(DEP_CPP_SCIEN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\scientist.obj" : $(SOURCE) $(DEP_CPP_SCIEN) "$(INTDIR)"
+
+"$(INTDIR)\scientist.sbr" : $(SOURCE) $(DEP_CPP_SCIEN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3237,8 +4337,21 @@ DEP_CPP_SCRIP=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\scripted.obj" : $(SOURCE) $(DEP_CPP_SCRIP) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\scripted.obj" : $(SOURCE) $(DEP_CPP_SCRIP) "$(INTDIR)"
+
+"$(INTDIR)\scripted.sbr" : $(SOURCE) $(DEP_CPP_SCRIP) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3296,8 +4409,21 @@ DEP_CPP_SHOTG=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\shotgun.obj" : $(SOURCE) $(DEP_CPP_SHOTG) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\shotgun.obj" : $(SOURCE) $(DEP_CPP_SHOTG) "$(INTDIR)"
+
+"$(INTDIR)\shotgun.sbr" : $(SOURCE) $(DEP_CPP_SHOTG) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3330,8 +4456,21 @@ DEP_CPP_SINGL=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\singleplay_gamerules.obj" : $(SOURCE) $(DEP_CPP_SINGL) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\singleplay_gamerules.obj" : $(SOURCE) $(DEP_CPP_SINGL) "$(INTDIR)"
+
+"$(INTDIR)\singleplay_gamerules.sbr" : $(SOURCE) $(DEP_CPP_SINGL) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3355,8 +4494,21 @@ DEP_CPP_SKILL=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\skill.obj" : $(SOURCE) $(DEP_CPP_SKILL) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\skill.obj" : $(SOURCE) $(DEP_CPP_SKILL) "$(INTDIR)"
+
+"$(INTDIR)\skill.sbr" : $(SOURCE) $(DEP_CPP_SKILL) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3402,8 +4554,21 @@ DEP_CPP_SOUND=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\sound.obj" : $(SOURCE) $(DEP_CPP_SOUND) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\sound.obj" : $(SOURCE) $(DEP_CPP_SOUND) "$(INTDIR)"
+
+"$(INTDIR)\sound.sbr" : $(SOURCE) $(DEP_CPP_SOUND) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3434,8 +4599,21 @@ DEP_CPP_SOUNDE=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\soundent.obj" : $(SOURCE) $(DEP_CPP_SOUNDE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\soundent.obj" : $(SOURCE) $(DEP_CPP_SOUNDE) "$(INTDIR)"
+
+"$(INTDIR)\soundent.sbr" : $(SOURCE) $(DEP_CPP_SOUNDE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3478,8 +4656,21 @@ DEP_CPP_SPECT=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\spectator.obj" : $(SOURCE) $(DEP_CPP_SPECT) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\spectator.obj" : $(SOURCE) $(DEP_CPP_SPECT) "$(INTDIR)"
+
+"$(INTDIR)\spectator.sbr" : $(SOURCE) $(DEP_CPP_SPECT) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3525,8 +4716,21 @@ DEP_CPP_SQUAD=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\squadmonster.obj" : $(SOURCE) $(DEP_CPP_SQUAD) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\squadmonster.obj" : $(SOURCE) $(DEP_CPP_SQUAD) "$(INTDIR)"
+
+"$(INTDIR)\squadmonster.sbr" : $(SOURCE) $(DEP_CPP_SQUAD) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3573,8 +4777,21 @@ DEP_CPP_SQUEA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\squeakgrenade.obj" : $(SOURCE) $(DEP_CPP_SQUEA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\squeakgrenade.obj" : $(SOURCE) $(DEP_CPP_SQUEA) "$(INTDIR)"
+
+"$(INTDIR)\squeakgrenade.sbr" : $(SOURCE) $(DEP_CPP_SQUEA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3604,8 +4821,21 @@ DEP_CPP_SUBS_=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\subs.obj" : $(SOURCE) $(DEP_CPP_SUBS_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\subs.obj" : $(SOURCE) $(DEP_CPP_SUBS_) "$(INTDIR)"
+
+"$(INTDIR)\subs.sbr" : $(SOURCE) $(DEP_CPP_SUBS_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3641,8 +4871,21 @@ DEP_CPP_TALKM=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\talkmonster.obj" : $(SOURCE) $(DEP_CPP_TALKM) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\talkmonster.obj" : $(SOURCE) $(DEP_CPP_TALKM) "$(INTDIR)"
+
+"$(INTDIR)\talkmonster.sbr" : $(SOURCE) $(DEP_CPP_TALKM) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3684,8 +4927,21 @@ DEP_CPP_TEMPM=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\tempmonster.obj" : $(SOURCE) $(DEP_CPP_TEMPM) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\tempmonster.obj" : $(SOURCE) $(DEP_CPP_TEMPM) "$(INTDIR)"
+
+"$(INTDIR)\tempmonster.sbr" : $(SOURCE) $(DEP_CPP_TEMPM) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3717,8 +4973,21 @@ DEP_CPP_TENTA=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\tentacle.obj" : $(SOURCE) $(DEP_CPP_TENTA) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\tentacle.obj" : $(SOURCE) $(DEP_CPP_TENTA) "$(INTDIR)"
+
+"$(INTDIR)\tentacle.sbr" : $(SOURCE) $(DEP_CPP_TENTA) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3761,8 +5030,21 @@ DEP_CPP_TRIGG=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\triggers.obj" : $(SOURCE) $(DEP_CPP_TRIGG) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\triggers.obj" : $(SOURCE) $(DEP_CPP_TRIGG) "$(INTDIR)"
+
+"$(INTDIR)\triggers.sbr" : $(SOURCE) $(DEP_CPP_TRIGG) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3797,8 +5079,21 @@ DEP_CPP_TRIPM=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\tripmine.obj" : $(SOURCE) $(DEP_CPP_TRIPM) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\tripmine.obj" : $(SOURCE) $(DEP_CPP_TRIPM) "$(INTDIR)"
+
+"$(INTDIR)\tripmine.sbr" : $(SOURCE) $(DEP_CPP_TRIPM) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3830,8 +5125,21 @@ DEP_CPP_TURRE=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\turret.obj" : $(SOURCE) $(DEP_CPP_TURRE) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\turret.obj" : $(SOURCE) $(DEP_CPP_TURRE) "$(INTDIR)"
+
+"$(INTDIR)\turret.sbr" : $(SOURCE) $(DEP_CPP_TURRE) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3864,8 +5172,21 @@ DEP_CPP_UTIL_=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\util.obj" : $(SOURCE) $(DEP_CPP_UTIL_) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\util.obj" : $(SOURCE) $(DEP_CPP_UTIL_) "$(INTDIR)"
+
+"$(INTDIR)\util.sbr" : $(SOURCE) $(DEP_CPP_UTIL_) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3925,8 +5246,21 @@ DEP_CPP_WEAPO=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\weapons.obj" : $(SOURCE) $(DEP_CPP_WEAPO) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\weapons.obj" : $(SOURCE) $(DEP_CPP_WEAPO) "$(INTDIR)"
+
+"$(INTDIR)\weapons.sbr" : $(SOURCE) $(DEP_CPP_WEAPO) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -3975,8 +5309,21 @@ DEP_CPP_WORLD=\
 	".\weapons.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\world.obj" : $(SOURCE) $(DEP_CPP_WORLD) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\world.obj" : $(SOURCE) $(DEP_CPP_WORLD) "$(INTDIR)"
+
+"$(INTDIR)\world.sbr" : $(SOURCE) $(DEP_CPP_WORLD) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -4006,8 +5353,21 @@ DEP_CPP_XEN_C=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\xen.obj" : $(SOURCE) $(DEP_CPP_XEN_C) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\xen.obj" : $(SOURCE) $(DEP_CPP_XEN_C) "$(INTDIR)"
+
+"$(INTDIR)\xen.sbr" : $(SOURCE) $(DEP_CPP_XEN_C) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -4037,8 +5397,21 @@ DEP_CPP_ZOMBI=\
 	".\vector.h"\
 	
 
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
 "$(INTDIR)\zombie.obj" : $(SOURCE) $(DEP_CPP_ZOMBI) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\zombie.obj" : $(SOURCE) $(DEP_CPP_ZOMBI) "$(INTDIR)"
+
+"$(INTDIR)\zombie.sbr" : $(SOURCE) $(DEP_CPP_ZOMBI) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 ################################################################################
@@ -4057,6 +5430,9 @@ SOURCE=.\hl.def
 # Begin Source File
 
 SOURCE=.\client.cpp
+
+!IF  "$(CFG)" == "hl - Win32 Release"
+
 DEP_CPP_CLIEN=\
 	"..\dlls\cdll_dll.h"\
 	"..\engine\custom.h"\
@@ -4085,6 +5461,40 @@ DEP_CPP_CLIEN=\
 
 "$(INTDIR)\client.obj" : $(SOURCE) $(DEP_CPP_CLIEN) "$(INTDIR)"
 
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+DEP_CPP_CLIEN=\
+	"..\dlls\cdll_dll.h"\
+	"..\engine\custom.h"\
+	"..\engine\cvardef.h"\
+	".\../common\platform.h"\
+	".\../engine\const.h"\
+	".\../engine\eiface.h"\
+	".\../engine\progs.h"\
+	".\activity.h"\
+	".\basemonster.h"\
+	".\cbase.h"\
+	".\client.h"\
+	".\enginecallback.h"\
+	".\extdll.h"\
+	".\gamerules.h"\
+	".\monsterevent.h"\
+	".\player.h"\
+	".\saverestore.h"\
+	".\schedule.h"\
+	".\soundent.h"\
+	".\spectator.h"\
+	".\util.h"\
+	".\vector.h"\
+	
+
+"$(INTDIR)\client.obj" : $(SOURCE) $(DEP_CPP_CLIEN) "$(INTDIR)"
+
+"$(INTDIR)\client.sbr" : $(SOURCE) $(DEP_CPP_CLIEN) "$(INTDIR)"
+
+
+!ENDIF 
 
 # End Source File
 # End Target

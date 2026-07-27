@@ -198,6 +198,7 @@ public:
 
 	int Classify ( void );
 	void SetAnimation( PLAYER_ANIM playerAnim );
+	char m_szAnimExtention[32];
 
 	// custom player functions
 	virtual void ImpulseCommands( void );

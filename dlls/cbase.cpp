@@ -36,6 +36,7 @@ static DLL_FUNCTIONS gFunctionTable =
 	ClientKill,					//pfnClientKill
 	ClientPutInServer,			//pfnClientPutInServer
 	ClientCommand,				//pfnClientCommand
+	ClientUserInfoChanged,		//pfnClientUserInfoChanged
 	ServerActivate,				//pfnServerActivate
 
 	PlayerPreThink,				//pfnPlayerPreThink

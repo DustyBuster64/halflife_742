@@ -341,6 +341,35 @@ void ClientCommand( edict_t *pEntity )
 	}
 }
 
+/*
+========================
+ClientUserInfoChanged
+
+called after the player changes
+userinfo - gives dll a chance to modify it before
+it gets sent into the rest of the engine.
+========================
+*/
+void ClientUserInfoChanged( edict_t *pEntity, char *infobuffer )
+{
+	// Is the client spawned yet?
+	if( !pEntity->pvPrivateData )
+		return;
+
+	// msg everyone if someone changes their name,  and it isn't the first time (changing no name to current name)
+	if( pEntity->v.netname && STRING(pEntity->v.netname)[0] != 0 && !FStrEq( STRING(pEntity->v.netname), g_engfuncs.pfnInfoKeyValue( infobuffer, "name" )) )
+	{
+		char text[256];
+		sprintf( text, "* %s changed name to %s\n", STRING(pEntity->v.netname), g_engfuncs.pfnInfoKeyValue( infobuffer, "name" ) );
+		MESSAGE_BEGIN( MSG_ALL, gmsgSayText, NULL );
+			WRITE_BYTE( ENTINDEX(pEntity) );
+			WRITE_STRING( text );
+		MESSAGE_END();
+	}
+
+	g_pGameRules->ClientUserInfoChanged( GetClassPtr((CBasePlayer *)&pEntity->v), infobuffer );
+}
+
 void ServerActivate( edict_t *pEdictList, int edictCount, int clientMax )
 {
 	int				i;

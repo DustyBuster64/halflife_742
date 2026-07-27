@@ -151,7 +151,7 @@ int CGauss::GetItemInfo(ItemInfo *p)
 
 BOOL CGauss::Deploy( )
 {
-	return DefaultDeploy( "models/v_gauss.mdl", "models/p_gauss.mdl", GAUSS_DRAW );
+	return DefaultDeploy( "models/v_gauss.mdl", "models/p_gauss.mdl", GAUSS_DRAW, "gauss" );
 }
 
 
