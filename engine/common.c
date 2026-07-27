@@ -2826,3 +2826,51 @@ void COM_GetGameDir( char* szGameDir )
 
 	strcpy(szGameDir, com_gamedir);
 }
+
+char* Info_ValueForKey( char* info, const char* key )
+{
+	static char valueBuffers[4][512];
+	static int valueBufferIndex = 0;
+
+	char currentKey[512];
+	char* out;
+	char* k;
+	char* v;
+
+	valueBufferIndex = (valueBufferIndex + 1) & 3;
+	out = valueBuffers[valueBufferIndex];
+
+	if( !info || !key )
+		return "";
+
+	if( *info == '\\' )
+		++info;
+
+	while( *info )
+	{
+		k = currentKey;
+		while( *info && *info != '\\' )
+			*k++ = *info++;
+		*k = '\0';
+
+		if( !*info )
+			return "";
+
+		++info;
+
+		v = out;
+		while( *info && *info != '\\' )
+			*v++ = *info++;
+		*v = '\0';
+
+		if( strcmp(key, currentKey) == 0 )
+			return out;
+
+		if( !*info )
+			break;
+
+		++info;
+	}
+
+	return "";
+}

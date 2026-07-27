@@ -89,4 +89,6 @@ int		RandomLong( long lLow, long lHigh );
 void	PF_FadeVolume( const edict_t* clientent, int fadePercent, int fadeOutSeconds, int holdTime, int fadeInSeconds );
 void	PF_SetClientMaxspeed( const edict_t* clientent, float fNewMaxspeed );
 
+char*	PF_InfoKeyValue_I( char* info, const char* key );
+
 #endif // PR_CMDS_H

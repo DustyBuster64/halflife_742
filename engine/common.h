@@ -178,6 +178,8 @@ int COM_ListMaps( char* pszFileName, char* pszSubString );
 
 void COM_GetGameDir( char* szGameDir );
 
+char* Info_ValueForKey( char* info, const char* key );
+
 void LoadBMP8( int* h, byte** pPalette, int* nPalette, byte** pImage );
 byte* LoadBMP16( FILE* fin, qboolean is15bit );
 

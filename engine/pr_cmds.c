@@ -2221,3 +2221,15 @@ void PF_SetClientMaxspeed( const edict_t* clientent, float fNewMaxspeed )
 	MSG_WriteByte(&sv.datagram, (byte)(entnum - 1));
 	MSG_WriteFloat(&sv.datagram, fNewMaxspeed);
 }
+
+/*
+===============
+PF_InfoKeyValue_I
+
+Returns the value for "key" from an info string from multiplayer
+===============
+*/
+char* PF_InfoKeyValue_I( char* info, const char* key )
+{
+	return Info_ValueForKey( info, key );
+}

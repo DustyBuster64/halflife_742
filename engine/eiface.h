@@ -290,7 +290,6 @@ typedef struct
 
 #define Q_ARRAYSIZE(p)		(sizeof(p)/sizeof(p[0]))
 
-//TODO: Figure out wtf is pfnClientUserInfoChanged used for -Dusty64
 typedef struct
 {
 	int				(*pfnSpawn)				( edict_t* pent );
