@@ -139,6 +139,7 @@ void CHud :: Init( void )
 	m_DeathNotice.Init();
 
 	m_SayText.Init();
+	m_Menu.Init();
 
 	MsgFunc_ResetHUD(0, 0, NULL );
 }

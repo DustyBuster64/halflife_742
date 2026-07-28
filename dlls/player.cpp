@@ -166,6 +166,7 @@ int gmsgHideWeapon = 0;
 int gmsgSetCurWeap = 0;
 int gmsgSayText = 0;
 int gmsgSetFOV = 0;
+int gmsgShowMenu = 0;
 
 int grgmsgAmmo[MAX_AMMO_SLOTS];
 
@@ -3202,6 +3203,7 @@ void CBasePlayer :: Precache( void )
 	gmsgItemPickup = REG_USER_MSG( "ItemPickup", -1 );
 	gmsgHideWeapon = REG_USER_MSG( "HideWeapon", 1 );
 	gmsgSetFOV = REG_USER_MSG( "SetFOV", 1 );
+	gmsgShowMenu = REG_USER_MSG( "ShowMenu", -1 ); //Dusty64: Bruh, this never gets called, this goes unused...
 	gmsgShake = REG_USER_MSG("ScreenShake", sizeof(ScreenShake));
 	gmsgFade = REG_USER_MSG("ScreenFade", sizeof(ScreenFade));
 
