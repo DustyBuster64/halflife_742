@@ -10,7 +10,8 @@
 
 enum mp5_e
 {
-	MP5_IDLE1 = 0,
+	MP5_LONGIDLE = 0,
+	MP5_IDLE1,
 	MP5_LAUNCH,
 	MP5_RELOAD,
 	MP5_DEPLOY,
@@ -272,6 +273,19 @@ void CMP5::WeaponIdle( void )
 
 	if (m_flTimeWeaponIdle > gpGlobals->time)
 		return;
+
+	int iAnim;
+	switch ( RANDOM_LONG( 0, 1 ) )
+	{
+	case 0:
+		iAnim = MP5_LONGIDLE;
+		break;
+	case 1:
+		iAnim = MP5_IDLE1;
+		break;
+	}
+
+	SendWeaponAnim( iAnim );
 
 	m_flTimeWeaponIdle = gpGlobals->time + RANDOM_FLOAT ( 10, 15 );// how long till we do this again.
 }

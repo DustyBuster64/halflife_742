@@ -173,7 +173,7 @@ typedef enum
 	} TOGGLE_STATE;
 
 // Misc useful
-inline BOOL FStrEq(char*sz1, char*sz2)
+inline BOOL FStrEq(const char*sz1, const char*sz2)
 	{ return (strcmp(sz1, sz2) == 0); }
 inline BOOL FClassnameIs(edict_t* pent, char* szClassname)
 	{ return FStrEq(STRING(VARS(pent)->classname), szClassname); }

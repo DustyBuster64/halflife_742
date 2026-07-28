@@ -25,6 +25,7 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 {
 	RefreshSkillData();
 	m_flIntermissionEndTime = 0;
+	SERVER_COMMAND( "exec server.cfg\n" );
 }
 
 //=========================================================
@@ -100,8 +101,8 @@ void CHalfLifeMultiplay :: Think ( void )
 		return;
 	}
 
-	float flTimeLimit = CVAR_GET_FLOAT("timelimit") * 60;
-	float flFragLimit = CVAR_GET_FLOAT("fraglimit");
+	float flTimeLimit = CVAR_GET_FLOAT("mp_timelimit") * 60;
+	float flFragLimit = CVAR_GET_FLOAT("mp_fraglimit");
 	
 	if ( flTimeLimit != 0 && gpGlobals->time >= flTimeLimit )
 	{
@@ -351,22 +352,7 @@ float CHalfLifeMultiplay :: FlPlayerFallDamage( CBasePlayer *pPlayer )
 //=========================================================
 BOOL CHalfLifeMultiplay::FPlayerCanTakeDamage( CBasePlayer *pPlayer, CBaseEntity *pAttacker )
 {
-	if ( !IsTeamplay() )
-		return TRUE;
-
-	if ( !pAttacker )
-		return TRUE;
-
-	if ( PlayerRelationship( pPlayer, pAttacker ) != GR_TEAMMATE )
-		return TRUE;
-
-	if ( CVAR_GET_FLOAT("mp_friendlyfire") )
-		return TRUE;
-
-	if ( pAttacker == pPlayer )
-		return TRUE;
-
-	return FALSE;
+	return TRUE;
 }
 
 //=========================================================

@@ -18,6 +18,7 @@
 #include "player.h"
 #include "weapons.h"
 #include "gamerules.h"
+#include "teamplay_gamerules.h"
 
 extern CGraph WorldGraph;
 extern CSoundEnt *pSoundEnt;
@@ -251,6 +252,12 @@ CGameRules* InstallGameRules( char *szGameName )
 	{
 		// vanilla deathmatch
 		return new CHalfLifeMultiplay;
+	}
+
+	if ( !strcmp( szGameName, "half-life teamplay" ) )
+	{
+		// teamplay
+		return new CHalfLifeTeamplay;
 	}
 	else
 	{
@@ -652,7 +659,12 @@ void CWorld :: Precache( void )
 		gDisplayTitle = FALSE;
 
 	if ( gpGlobals->deathmatch )
-		g_pGameRules = InstallGameRules( "half-life multiplay" );
+	{
+		if ( CVAR_GET_FLOAT( "mp_teamplay" ) > 0 )
+			g_pGameRules = InstallGameRules( "half-life teamplay" );
+		else
+			g_pGameRules = InstallGameRules( "half-life multiplay" );
+	}
 	else
 		g_pGameRules = InstallGameRules( "half-life" );
 }

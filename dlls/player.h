@@ -42,6 +42,8 @@
 #define	SOUND_FLASHLIGHT_ON		"items/flashlight1.wav"
 #define	SOUND_FLASHLIGHT_OFF	"items/flashlight1.wav"
 
+#define TEAM_NAME_LENGTH	16
+
 typedef enum
 {
 	PLAYER_IDLE,
@@ -144,6 +146,8 @@ public:
 	float				m_iRespawnFrames;	// used in PlayerDeathThink() to make sure players can always respawn
 
 	int m_nCustomSprayFrames;// Custom clan logo frames for this player
+
+	char m_szTeamName[TEAM_NAME_LENGTH];
 
 	virtual void Spawn( void );
 	void Pain( void );

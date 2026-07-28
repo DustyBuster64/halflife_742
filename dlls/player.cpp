@@ -3423,7 +3423,6 @@ void CBasePlayer::SelectPrevItem( int iItem )
 {
 }
 
-
 //==============================================
 // !!!UNDONE:ultra temporary SprayCan entity to apply
 // decal frame at a time. For PreAlpha CD

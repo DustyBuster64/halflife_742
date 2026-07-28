@@ -31,9 +31,9 @@ NULL=nul
 ################################################################################
 # Begin Project
 # PROP Target_Last_Scanned "hl - Win32 Debug"
+CPP=cl.exe
 MTL=mktyplib.exe
 RSC=rc.exe
-CPP=cl.exe
 
 !IF  "$(CFG)" == "hl - Win32 Release"
 
@@ -135,6 +135,7 @@ CLEAN :
 	-@erase "$(INTDIR)\squeakgrenade.obj"
 	-@erase "$(INTDIR)\subs.obj"
 	-@erase "$(INTDIR)\talkmonster.obj"
+	-@erase "$(INTDIR)\teamplay_gamerules.obj"
 	-@erase "$(INTDIR)\tempmonster.obj"
 	-@erase "$(INTDIR)\tentacle.obj"
 	-@erase "$(INTDIR)\triggers.obj"
@@ -267,6 +268,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\squeakgrenade.obj" \
 	"$(INTDIR)\subs.obj" \
 	"$(INTDIR)\talkmonster.obj" \
+	"$(INTDIR)\teamplay_gamerules.obj" \
 	"$(INTDIR)\tempmonster.obj" \
 	"$(INTDIR)\tentacle.obj" \
 	"$(INTDIR)\triggers.obj" \
@@ -465,6 +467,8 @@ CLEAN :
 	-@erase "$(INTDIR)\subs.sbr"
 	-@erase "$(INTDIR)\talkmonster.obj"
 	-@erase "$(INTDIR)\talkmonster.sbr"
+	-@erase "$(INTDIR)\teamplay_gamerules.obj"
+	-@erase "$(INTDIR)\teamplay_gamerules.sbr"
 	-@erase "$(INTDIR)\tempmonster.obj"
 	-@erase "$(INTDIR)\tempmonster.sbr"
 	-@erase "$(INTDIR)\tentacle.obj"
@@ -597,6 +601,7 @@ BSC32_SBRS= \
 	"$(INTDIR)\squeakgrenade.sbr" \
 	"$(INTDIR)\subs.sbr" \
 	"$(INTDIR)\talkmonster.sbr" \
+	"$(INTDIR)\teamplay_gamerules.sbr" \
 	"$(INTDIR)\tempmonster.sbr" \
 	"$(INTDIR)\tentacle.sbr" \
 	"$(INTDIR)\triggers.sbr" \
@@ -707,6 +712,7 @@ LINK32_OBJS= \
 	"$(INTDIR)\squeakgrenade.obj" \
 	"$(INTDIR)\subs.obj" \
 	"$(INTDIR)\talkmonster.obj" \
+	"$(INTDIR)\teamplay_gamerules.obj" \
 	"$(INTDIR)\tempmonster.obj" \
 	"$(INTDIR)\tentacle.obj" \
 	"$(INTDIR)\triggers.obj" \
@@ -5304,6 +5310,7 @@ DEP_CPP_WORLD=\
 	".\schedule.h"\
 	".\skill.h"\
 	".\soundent.h"\
+	".\teamplay_gamerules.h"\
 	".\util.h"\
 	".\vector.h"\
 	".\weapons.h"\
@@ -5492,6 +5499,63 @@ DEP_CPP_CLIEN=\
 "$(INTDIR)\client.obj" : $(SOURCE) $(DEP_CPP_CLIEN) "$(INTDIR)"
 
 "$(INTDIR)\client.sbr" : $(SOURCE) $(DEP_CPP_CLIEN) "$(INTDIR)"
+
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\teamplay_gamerules.h
+
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\teamplay_gamerules.cpp
+DEP_CPP_TEAMP=\
+	"..\dlls\cdll_dll.h"\
+	"..\engine\custom.h"\
+	"..\engine\cvardef.h"\
+	".\../common\platform.h"\
+	".\../engine\const.h"\
+	".\../engine\eiface.h"\
+	".\../engine\progdefs.h"\
+	".\../engine\progs.h"\
+	".\activity.h"\
+	".\basemonster.h"\
+	".\cbase.h"\
+	".\enginecallback.h"\
+	".\extdll.h"\
+	".\gamerules.h"\
+	".\monsterevent.h"\
+	".\player.h"\
+	".\saverestore.h"\
+	".\schedule.h"\
+	".\teamplay_gamerules.h"\
+	".\util.h"\
+	".\vector.h"\
+	
+
+!IF  "$(CFG)" == "hl - Win32 Release"
+
+
+"$(INTDIR)\teamplay_gamerules.obj" : $(SOURCE) $(DEP_CPP_TEAMP) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "hl - Win32 Debug"
+
+
+"$(INTDIR)\teamplay_gamerules.obj" : $(SOURCE) $(DEP_CPP_TEAMP) "$(INTDIR)"
+
+"$(INTDIR)\teamplay_gamerules.sbr" : $(SOURCE) $(DEP_CPP_TEAMP) "$(INTDIR)"
 
 
 !ENDIF 
