@@ -177,6 +177,7 @@ typedef struct enginefuncs_s
 	edict_t*	(*pfnCreateFakeClient)		( const char* netname );	// returns NULL if fake client can't be created
 	void		(*pfnRunPlayerMove)			( edict_t* fakeclient, float* viewangles, float forwardmove, float sidemove, float upmove, unsigned short buttons, byte impulse, byte msec );
 	int			(*pfnNumberOfEntities)		( void );
+	char*		(*pfnInfoKeyValue)			( char* infobuffer, char* key );
 	int			(*pfnIsMapValid)			( char* filename );
 } enginefuncs_t;
 // be sure to bump INTERFACE_VERSION if you add a new function

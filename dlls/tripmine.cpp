@@ -45,6 +45,7 @@ class CTripmineGrenade : public CGrenade
 	void Killed( entvars_t *pevAttacker, int iGib );
 
 	void MakeBeam( void );
+	void KillBeam( void );
 
 	float		m_flPowerUp;
 	Vector		m_vecDir;
@@ -178,6 +179,7 @@ void CTripmineGrenade :: PowerupThink( void  )
 			SetThink( &CBaseEntity::SUB_Remove );
 			pev->nextthink = gpGlobals->time + 0.1;
 			ALERT( at_console, "WARNING:Tripmine at %.0f, %.0f, %.0f removed\n", pev->origin.x, pev->origin.y, pev->origin.z );
+			KillBeam();
 			return;
 		}
 	}
@@ -190,6 +192,7 @@ void CTripmineGrenade :: PowerupThink( void  )
 		pMine->pev->spawnflags |= SF_NORESPAWN;
 
 		SetThink( &CBaseEntity::SUB_Remove );
+		KillBeam();
 		pev->nextthink = gpGlobals->time + 0.1;
 		return;
 	}
@@ -207,6 +210,15 @@ void CTripmineGrenade :: PowerupThink( void  )
         EMIT_SOUND_DYN( ENT(pev), CHAN_VOICE, "weapons/mine_activate.wav", 0.5, ATTN_NORM, 1.0, 75 );
 	}
 	pev->nextthink = gpGlobals->time + 0.1;
+}
+
+void CTripmineGrenade :: KillBeam( void )
+{
+	if ( m_pBeam )
+	{
+		UTIL_Remove( m_pBeam );
+		m_pBeam = NULL;
+	}
 }
 
 void CTripmineGrenade :: MakeBeam( void )
@@ -290,6 +302,7 @@ int CTripmineGrenade :: TakeDamage( entvars_t *pevInflictor, entvars_t *pevAttac
 		// Create( "weapon_tripmine", pev->origin + m_vecDir * 24, pev->angles );
 		SetThink( &CBaseEntity::SUB_Remove );
 		pev->nextthink = gpGlobals->time + 0.1;
+		KillBeam();
 		return FALSE;
 	}
 	return CGrenade::TakeDamage( pevInflictor, pevAttacker, flDamage, bitsDamageType );
@@ -314,11 +327,7 @@ void CTripmineGrenade::Killed( entvars_t *pevAttacker, int iGib )
 
 void CTripmineGrenade::DelayDeathThink( void )
 {
-	if ( m_pBeam )
-	{
-		UTIL_Remove( m_pBeam );
-		m_pBeam = NULL;
-	}
+	KillBeam();
 
 	TraceResult tr;
 	UTIL_TraceLine ( pev->origin + m_vecDir * 8, pev->origin - m_vecDir * 64,  dont_ignore_monsters, ENT(pev), & tr);

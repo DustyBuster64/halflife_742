@@ -1834,19 +1834,19 @@ void PF_MessageBegin_I( int msg_dest, int msg_type, const float* pOrigin, edict_
 	gMsgBuffer.allowoverflow = FALSE;
 }
 
+//Dusty: thanks botman :)
 void PF_MessageEnd_I( void )
 {
-	qboolean MsgIsVarLength = FALSE;
-	sizebuf_t* pBuffer;
+	qboolean	MsgIsVarLength = false;
+	sizebuf_t	*pBuffer;
 
 	if (!gMsgStarted)
-		Sys_Error("MESSAGE_END called with no active message\n");
+		Sys_Error( "MESSAGE_END called with no active message\n" );
 
-	gMsgStarted = FALSE;
+	gMsgStarted = false;
 
-	// Don't output this to bots
 	if (gMsgEntity && (gMsgEntity->v.flags & FL_FAKECLIENT))
-		return;
+		return;		// throw away the message;  it's not a real client
 
 	// Check if it's a valid msg
 	if (gMsgType > svc_lastmsg)
@@ -1854,6 +1854,13 @@ void PF_MessageEnd_I( void )
 		// The list of user's messages will become complete only after calling Host_Map
 		// or sending a message to clients for the first time
 		UserMsg* pUserMsg = sv_gpUserMsgs;
+
+		if ( !pUserMsg )
+		{
+			Con_DPrintf("Illegal User Msg %d\n", gMsgType);
+			return;
+		}
+
 		while (pUserMsg)
 		{
 			if (pUserMsg->iMsg == gMsgType)
@@ -1869,7 +1876,7 @@ void PF_MessageEnd_I( void )
 
 		if (pUserMsg->iSize == -1)
 		{
-			MsgIsVarLength = TRUE;
+			MsgIsVarLength = true;
 		}
 		else
 		{
@@ -1883,33 +1890,43 @@ void PF_MessageEnd_I( void )
 
 	// Write the message type to the buffer
 	pBuffer = WriteDest_Parm(gMsgDest);
-	MSG_WriteByte(pBuffer, gMsgType);
 
-	if (MsgIsVarLength)
+	if ( gMsgDest != MSG_BROADCAST || (gMsgBuffer.cursize + pBuffer->cursize <= pBuffer->maxsize) )
 	{
-		pBuffer = WriteDest_Parm(gMsgDest);
-		MSG_WriteByte(pBuffer, gMsgBuffer.cursize);
-	}
+		if ( pBuffer->data )
+		{
+			pBuffer = WriteDest_Parm(gMsgDest);
+			MSG_WriteByte(pBuffer, gMsgType);
 
-	pBuffer = WriteDest_Parm(gMsgDest);
-	MSG_WriteBuf(pBuffer, gMsgBuffer.cursize, gMsgBuffer.data);
+			if (MsgIsVarLength)
+			{
+				pBuffer = WriteDest_Parm(gMsgDest);
+				MSG_WriteByte(pBuffer, gMsgBuffer.cursize);
+			}
 
-	switch (gMsgDest)
-	{
-	case MSG_PVS:
-		SV_Multicast(gMsgOrigin, MSG_FL_PVS, FALSE);
-		break;
-	case MSG_PAS:
-		SV_Multicast(gMsgOrigin, MSG_FL_PAS, FALSE);
-		break;
-	case MSG_PVS_R:
-		SV_Multicast(gMsgOrigin, MSG_FL_PAS, TRUE);
-		break;
-	case MSG_PAS_R:
-		SV_Multicast(gMsgOrigin, MSG_FL_PAS, TRUE);
-		break;
-	default:
-		break;
+			pBuffer = WriteDest_Parm(gMsgDest);
+			MSG_WriteBuf(pBuffer, gMsgBuffer.cursize, gMsgBuffer.data);
+
+			switch (gMsgDest)
+			{
+			case MSG_PVS:
+				SV_Multicast(gMsgOrigin, MSG_FL_PVS, FALSE);
+				break;
+			case MSG_PAS:
+				SV_Multicast(gMsgOrigin, MSG_FL_PAS, FALSE);
+				break;
+			case MSG_PVS_R:
+			case MSG_PAS_R:
+				SV_Multicast(gMsgOrigin, MSG_FL_PAS, TRUE);
+				break;
+			default:
+				break;
+			}
+		}
+		else
+		{
+			Con_DPrintf("Message sent to uninitialized buffer\n");
+		}
 	}
 }
 
