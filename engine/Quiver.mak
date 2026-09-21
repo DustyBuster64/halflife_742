@@ -61,10 +61,10 @@ ALL : "$(OUTDIR)\sw.dll"
 CLEAN : 
 	-@erase "$(INTDIR)\a3dwrapper.obj"
 	-@erase "$(INTDIR)\buildnum.obj"
+	-@erase "$(INTDIR)\camera.obj"
 	-@erase "$(INTDIR)\cdll_exp.obj"
 	-@erase "$(INTDIR)\cdll_int.obj"
 	-@erase "$(INTDIR)\chase.obj"
-	-@erase "$(INTDIR)\cl_cam.obj"
 	-@erase "$(INTDIR)\CL_DEMO.OBJ"
 	-@erase "$(INTDIR)\cl_draw.obj"
 	-@erase "$(INTDIR)\cl_ents.obj"
@@ -201,10 +201,10 @@ LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib\
 LINK32_OBJS= \
 	"$(INTDIR)\a3dwrapper.obj" \
 	"$(INTDIR)\buildnum.obj" \
+	"$(INTDIR)\camera.obj" \
 	"$(INTDIR)\cdll_exp.obj" \
 	"$(INTDIR)\cdll_int.obj" \
 	"$(INTDIR)\chase.obj" \
-	"$(INTDIR)\cl_cam.obj" \
 	"$(INTDIR)\CL_DEMO.OBJ" \
 	"$(INTDIR)\cl_draw.obj" \
 	"$(INTDIR)\cl_ents.obj" \
@@ -330,10 +330,10 @@ ALL : "$(OUTDIR)\sw.dll"
 CLEAN : 
 	-@erase "$(INTDIR)\a3dwrapper.obj"
 	-@erase "$(INTDIR)\buildnum.obj"
+	-@erase "$(INTDIR)\camera.obj"
 	-@erase "$(INTDIR)\cdll_exp.obj"
 	-@erase "$(INTDIR)\cdll_int.obj"
 	-@erase "$(INTDIR)\chase.obj"
-	-@erase "$(INTDIR)\cl_cam.obj"
 	-@erase "$(INTDIR)\CL_DEMO.OBJ"
 	-@erase "$(INTDIR)\cl_draw.obj"
 	-@erase "$(INTDIR)\cl_ents.obj"
@@ -474,10 +474,10 @@ LINK32_FLAGS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib\
 LINK32_OBJS= \
 	"$(INTDIR)\a3dwrapper.obj" \
 	"$(INTDIR)\buildnum.obj" \
+	"$(INTDIR)\camera.obj" \
 	"$(INTDIR)\cdll_exp.obj" \
 	"$(INTDIR)\cdll_int.obj" \
 	"$(INTDIR)\chase.obj" \
-	"$(INTDIR)\cl_cam.obj" \
 	"$(INTDIR)\CL_DEMO.OBJ" \
 	"$(INTDIR)\cl_draw.obj" \
 	"$(INTDIR)\cl_ents.obj" \
@@ -605,14 +605,14 @@ CLEAN :
 	-@erase "$(INTDIR)\a3dwrapper.sbr"
 	-@erase "$(INTDIR)\buildnum.obj"
 	-@erase "$(INTDIR)\buildnum.sbr"
+	-@erase "$(INTDIR)\camera.obj"
+	-@erase "$(INTDIR)\camera.sbr"
 	-@erase "$(INTDIR)\cdll_exp.obj"
 	-@erase "$(INTDIR)\cdll_exp.sbr"
 	-@erase "$(INTDIR)\cdll_int.obj"
 	-@erase "$(INTDIR)\cdll_int.sbr"
 	-@erase "$(INTDIR)\chase.obj"
 	-@erase "$(INTDIR)\chase.sbr"
-	-@erase "$(INTDIR)\cl_cam.obj"
-	-@erase "$(INTDIR)\cl_cam.sbr"
 	-@erase "$(INTDIR)\CL_DEMO.OBJ"
 	-@erase "$(INTDIR)\CL_DEMO.SBR"
 	-@erase "$(INTDIR)\cl_draw.obj"
@@ -785,10 +785,10 @@ BSC32_FLAGS=/nologo /o"$(OUTDIR)/Quiver.bsc"
 BSC32_SBRS= \
 	"$(INTDIR)\a3dwrapper.sbr" \
 	"$(INTDIR)\buildnum.sbr" \
+	"$(INTDIR)\camera.sbr" \
 	"$(INTDIR)\cdll_exp.sbr" \
 	"$(INTDIR)\cdll_int.sbr" \
 	"$(INTDIR)\chase.sbr" \
-	"$(INTDIR)\cl_cam.sbr" \
 	"$(INTDIR)\CL_DEMO.SBR" \
 	"$(INTDIR)\cl_draw.sbr" \
 	"$(INTDIR)\cl_ents.sbr" \
@@ -876,10 +876,10 @@ LINK32_FLAGS=ddraw.lib dxguid.lib ../dx6sdk/lib/dxmgr.lib kernel32.lib\
 LINK32_OBJS= \
 	"$(INTDIR)\a3dwrapper.obj" \
 	"$(INTDIR)\buildnum.obj" \
+	"$(INTDIR)\camera.obj" \
 	"$(INTDIR)\cdll_exp.obj" \
 	"$(INTDIR)\cdll_int.obj" \
 	"$(INTDIR)\chase.obj" \
-	"$(INTDIR)\cl_cam.obj" \
 	"$(INTDIR)\CL_DEMO.OBJ" \
 	"$(INTDIR)\cl_draw.obj" \
 	"$(INTDIR)\cl_ents.obj" \
@@ -978,10 +978,10 @@ ALL : "$(OUTDIR)\hw.dll"
 CLEAN : 
 	-@erase "$(INTDIR)\a3dwrapper.obj"
 	-@erase "$(INTDIR)\buildnum.obj"
+	-@erase "$(INTDIR)\camera.obj"
 	-@erase "$(INTDIR)\cdll_exp.obj"
 	-@erase "$(INTDIR)\cdll_int.obj"
 	-@erase "$(INTDIR)\chase.obj"
-	-@erase "$(INTDIR)\cl_cam.obj"
 	-@erase "$(INTDIR)\CL_DEMO.OBJ"
 	-@erase "$(INTDIR)\cl_draw.obj"
 	-@erase "$(INTDIR)\cl_ents.obj"
@@ -1093,10 +1093,10 @@ LINK32_FLAGS=ddraw.lib dxguid.lib ../dx6sdk/lib/dxmgr.lib kernel32.lib\
 LINK32_OBJS= \
 	"$(INTDIR)\a3dwrapper.obj" \
 	"$(INTDIR)\buildnum.obj" \
+	"$(INTDIR)\camera.obj" \
 	"$(INTDIR)\cdll_exp.obj" \
 	"$(INTDIR)\cdll_int.obj" \
 	"$(INTDIR)\chase.obj" \
-	"$(INTDIR)\cl_cam.obj" \
 	"$(INTDIR)\CL_DEMO.OBJ" \
 	"$(INTDIR)\cl_draw.obj" \
 	"$(INTDIR)\cl_ents.obj" \
@@ -1713,105 +1713,6 @@ NODEP_CPP_CHASE=\
 
 
 "$(INTDIR)\chase.obj" : $(SOURCE) $(DEP_CPP_CHASE) "$(INTDIR)"
-
-
-!ENDIF 
-
-# End Source File
-################################################################################
-# Begin Source File
-
-SOURCE=.\cl_cam.c
-DEP_CPP_CL_CA=\
-	"..\common\dll_state.h"\
-	"..\common\platform.h"\
-	"..\common\qfont.h"\
-	".\beamdef.h"\
-	".\bothdefs.h"\
-	".\bspfile.h"\
-	".\cdll_int.h"\
-	".\client.h"\
-	".\cmd.h"\
-	".\color.h"\
-	".\common.h"\
-	".\CONSOLE.H"\
-	".\const.h"\
-	".\crc.h"\
-	".\cshift.h"\
-	".\custom.h"\
-	".\cvar.h"\
-	".\cvardef.h"\
-	".\d_iface.h"\
-	".\draw.h"\
-	".\eiface.h"\
-	".\GL_MODEL.H"\
-	".\GLQUAKE.H"\
-	".\host_cmd.h"\
-	".\input.h"\
-	".\keys.h"\
-	".\mathlib.h"\
-	".\model.h"\
-	".\modelgen.h"\
-	".\net.h"\
-	".\pmove.h"\
-	".\pr_dlls.h"\
-	".\progdefs.h"\
-	".\Progs.h"\
-	".\protocol.h"\
-	".\qgl.h"\
-	".\quakedef.h"\
-	".\r_local.h"\
-	".\r_shared.h"\
-	".\render.h"\
-	".\save.h"\
-	".\sbar.h"\
-	".\screen.h"\
-	".\server.h"\
-	".\sound.h"\
-	".\spritegn.h"\
-	".\studio.h"\
-	".\sys.h"\
-	".\vid.h"\
-	".\view.h"\
-	".\vmodes.h"\
-	".\wad.h"\
-	".\winquake.h"\
-	".\world.h"\
-	".\wrect.h"\
-	".\zone.h"\
-	{$(INCLUDE)}"\gl\GL.H"\
-	
-NODEP_CPP_CL_CA=\
-	".\cmdlib.h"\
-	".\lbmlib.h"\
-	".\scriplib.h"\
-	".\trilib.h"\
-	
-
-!IF  "$(CFG)" == "Quiver - Win32 Release"
-
-
-"$(INTDIR)\cl_cam.obj" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
-
-
-!ELSEIF  "$(CFG)" == "Quiver - Win32 Debug"
-
-
-"$(INTDIR)\cl_cam.obj" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
-
-
-!ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
-
-
-"$(INTDIR)\cl_cam.obj" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
-
-"$(INTDIR)\cl_cam.sbr" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
-
-
-!ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
-
-
-"$(INTDIR)\cl_cam.obj" : $(SOURCE) $(DEP_CPP_CL_CA) "$(INTDIR)"
 
 
 !ENDIF 
@@ -13465,6 +13366,105 @@ BuildCmds= \
 
 "$(INTDIR)\a3dwrapper.obj" : $(SOURCE) $(DEP_CPP_A3DWR) "$(INTDIR)"
    $(CPP) $(CPP_PROJ) $(SOURCE)
+
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\camera.c
+DEP_CPP_CAMER=\
+	"..\common\dll_state.h"\
+	"..\common\platform.h"\
+	"..\common\qfont.h"\
+	".\beamdef.h"\
+	".\bothdefs.h"\
+	".\bspfile.h"\
+	".\cdll_int.h"\
+	".\client.h"\
+	".\cmd.h"\
+	".\color.h"\
+	".\common.h"\
+	".\CONSOLE.H"\
+	".\const.h"\
+	".\crc.h"\
+	".\cshift.h"\
+	".\custom.h"\
+	".\cvar.h"\
+	".\cvardef.h"\
+	".\d_iface.h"\
+	".\draw.h"\
+	".\eiface.h"\
+	".\GL_MODEL.H"\
+	".\GLQUAKE.H"\
+	".\host_cmd.h"\
+	".\input.h"\
+	".\keys.h"\
+	".\mathlib.h"\
+	".\model.h"\
+	".\modelgen.h"\
+	".\net.h"\
+	".\pmove.h"\
+	".\pr_dlls.h"\
+	".\progdefs.h"\
+	".\Progs.h"\
+	".\protocol.h"\
+	".\qgl.h"\
+	".\quakedef.h"\
+	".\r_local.h"\
+	".\r_shared.h"\
+	".\render.h"\
+	".\save.h"\
+	".\sbar.h"\
+	".\screen.h"\
+	".\server.h"\
+	".\sound.h"\
+	".\spritegn.h"\
+	".\studio.h"\
+	".\sys.h"\
+	".\vid.h"\
+	".\view.h"\
+	".\vmodes.h"\
+	".\wad.h"\
+	".\winquake.h"\
+	".\world.h"\
+	".\wrect.h"\
+	".\zone.h"\
+	{$(INCLUDE)}"\gl\GL.H"\
+	
+NODEP_CPP_CAMER=\
+	".\cmdlib.h"\
+	".\lbmlib.h"\
+	".\scriplib.h"\
+	".\trilib.h"\
+	
+
+!IF  "$(CFG)" == "Quiver - Win32 Release"
+
+
+"$(INTDIR)\camera.obj" : $(SOURCE) $(DEP_CPP_CAMER) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "Quiver - Win32 Debug"
+
+
+"$(INTDIR)\camera.obj" : $(SOURCE) $(DEP_CPP_CAMER) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "Quiver - Win32 GL Debug"
+
+
+"$(INTDIR)\camera.obj" : $(SOURCE) $(DEP_CPP_CAMER) "$(INTDIR)"
+
+"$(INTDIR)\camera.sbr" : $(SOURCE) $(DEP_CPP_CAMER) "$(INTDIR)"
+
+
+!ELSEIF  "$(CFG)" == "Quiver - Win32 GL Release"
+
+
+"$(INTDIR)\camera.obj" : $(SOURCE) $(DEP_CPP_CAMER) "$(INTDIR)"
 
 
 !ENDIF 
